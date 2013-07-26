@@ -45,6 +45,8 @@ object KafkaBuild extends Build {
     libraryDependencies <++= (scalaVersion) { scalaVersion =>
       Seq(
         "org.scalatest"         %% "scalatest"    % "1.9.1" % "test",
+        "junit"                 %  "junit"        % "4.1"   % "test",
+        "org.easymock"          %  "easymock"     % "3.0"   % "test",
         "log4j"                 %  "log4j"        % "1.2.15",
         "net.sf.jopt-simple"    %  "jopt-simple"  % "3.2",
         "org.slf4j"             %  "slf4j-simple" % "1.6.4",
