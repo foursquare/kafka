@@ -51,3 +51,39 @@ object DumpLogSegments {
   }
   
 }
+
+
+
+object DumpValid {
+
+  def main(args: Array[String]) {
+    var isNoPrint = false;
+    val inputFile = new File(args(0))
+    val outputFile = new File(args(1))
+
+    val messageSet = new FileMessageSet(inputFile, false)
+    
+
+
+    for(arg <- args) {
+      if (! ("-noprint".compareToIgnoreCase(arg) == 0) ) {
+        val file = new File(arg)
+        println("Dumping " + file)
+        val startOffset = file.getName().split("\\.")(0).toLong
+        var offset = 0L
+        println("Starting offset: " + startOffset)
+        val messageSet = new FileMessageSet(file, false)
+        for(messageAndOffset <- messageSet) {
+          val msg = messageAndOffset.message
+          println("offset: " + (startOffset + offset) + " isvalid: " + msg.isValid +
+                  " payloadsize: " + msg.payloadSize + " magic: " + msg.magic + " compresscodec: " + msg.compressionCodec)
+          if (!isNoPrint)
+            println("payload:\t" + Utils.toString(messageAndOffset.message.payload, "UTF-8"))
+          offset = messageAndOffset.offset
+        }
+        println("tail of the log is at offset: " + (startOffset + offset)) 
+      }
+    }
+  }
+  
+}

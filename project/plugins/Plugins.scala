@@ -20,4 +20,7 @@ import sbt._
 class Plugins(info: ProjectInfo) extends PluginDefinition(info) {
   val repo = "GH-pages repo" at "http://mpeltonen.github.com/maven/"
   val idea = "com.github.mpeltonen" % "sbt-idea-plugin" % "0.1-SNAPSHOT"
+  val assemblySBT = "com.codahale" % "assembly-sbt" % "0.1" 
+  val codaRepo = "Coda Hale's Repository" at "http://repo.codahale.com/"
 }
+

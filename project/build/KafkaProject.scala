@@ -18,6 +18,7 @@
 import sbt._
 import scala.xml.{Node, Elem, NodeSeq}
 import scala.xml.transform.{RewriteRule, RuleTransformer}
+import assembly._
 
 class KafkaProject(info: ProjectInfo) extends ParentProject(info) with IdeaProject {
   lazy val core = project("core", "core-kafka", new CoreKafkaProject(_))
@@ -200,7 +201,8 @@ class KafkaProject(info: ProjectInfo) extends ParentProject(info) with IdeaProje
 
     class HadoopConsumerProject(info: ProjectInfo) extends DefaultProject(info)
       with IdeaProject
-      with CoreDependencies {
+      with CoreDependencies
+      with AssemblyBuilder {
       val consumerPackageAction = packageAllAction
       override def ivyXML =
        <dependencies>
@@ -226,7 +228,7 @@ class KafkaProject(info: ProjectInfo) extends ParentProject(info) with IdeaProje
   trait TestDependencies {
     val easymock = "org.easymock" % "easymock" % "3.0" % "test"
     val junit = "junit" % "junit" % "4.1" % "test"
-    val scalaTest = "org.scalatest" % "scalatest" % "1.2" % "test"
+    val scalaTest = "org.scalatest" %% "scalatest" % "1.8" % "test"
   }
 
   trait CoreDependencies {
