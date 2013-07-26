@@ -42,13 +42,19 @@ object KafkaBuild extends Build {
     // https://github.com/harrah/xsbt/issues/85
     unmanagedClasspath in Compile += Attributed.blank(new java.io.File("doesnotexist")),
     
-    libraryDependencies ++= Seq(
-      "org.scalatest"         %% "scalatest"    % "1.9.1" % "test",
-      "log4j"                 %  "log4j"        % "1.2.15",
-      "net.sf.jopt-simple"    %  "jopt-simple"  % "3.2",
-      "org.slf4j"             %  "slf4j-simple" % "1.6.4",
-      "org.xerial.snappy" % "snappy-java" % "1.0.4.1"
-    ),
+    libraryDependencies <++= (scalaVersion) { scalaVersion =>
+      Seq(
+        "org.scalatest"         %% "scalatest"    % "1.9.1" % "test",
+        "log4j"                 %  "log4j"        % "1.2.15",
+        "net.sf.jopt-simple"    %  "jopt-simple"  % "3.2",
+        "org.slf4j"             %  "slf4j-simple" % "1.6.4",
+        "org.xerial.snappy" % "snappy-java" % "1.0.4.1"
+      ) ++ (
+        if (scalaVersion == "2.10.2") {
+          Seq("org.scala-lang"  %  "scala-actors"  % "2.10.2")
+        } else { Nil }
+      )
+    },
     // The issue is going from log4j 1.2.14 to 1.2.15, the developers added some features which required
     // some dependencies on various sun and javax packages.
     ivyXML := <dependencies>

@@ -29,7 +29,7 @@ class ByteBufferMessageSet(private val buffer: ByteBuffer,
   def this(buffer: ByteBuffer) = this(buffer, 0L, ErrorMapping.NoError)
 
   def this(compressionCodec: CompressionCodec, messages: java.util.List[Message]) {
-    this(MessageSet.createByteBuffer(compressionCodec, scala.collection.JavaConversions.asBuffer(messages): _*),
+    this(MessageSet.createByteBuffer(compressionCodec, scala.collection.JavaConversions.asScalaBuffer(messages): _*),
          0L, ErrorMapping.NoError)
   }
 
