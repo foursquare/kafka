@@ -33,7 +33,7 @@ class KafkaServer(val config: KafkaConfig) extends Logging {
   private var isShuttingDown = new AtomicBoolean(false)
   private var shutdownLatch = new CountDownLatch(1)
 
-  private val statsMBeanName = "kafka:type=kafka.SocketServerStats"
+  private val statsMBeanName = "kafka:type=kafka7.SocketServerStats"
   
   var socketServer: SocketServer = null
   

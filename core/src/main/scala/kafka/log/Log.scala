@@ -120,7 +120,7 @@ private[log] class Log(val dir: File, val maxSize: Long, val flushInterval: Int,
 
   private val logStats = new LogStats(this)
 
-  Utils.registerMBean(logStats, "kafka:type=kafka.logs." + dir.getName)  
+  Utils.registerMBean(logStats, "kafka:type=kafka7.logs." + dir.getName)  
 
   /* Load the log segments from the log files on disk */
   private def loadSegments(): SegmentList[LogSegment] = {

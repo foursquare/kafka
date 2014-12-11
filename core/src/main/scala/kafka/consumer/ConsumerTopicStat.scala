@@ -42,7 +42,7 @@ class ConsumerTopicStat extends ConsumerTopicStatMBean {
 object ConsumerTopicStat extends Logging {
   private val stats = new Pool[String, ConsumerTopicStat]
   private val allTopicStat = new ConsumerTopicStat
-  Utils.registerMBean(allTopicStat, "kafka:type=kafka.ConsumerAllTopicStat")
+  Utils.registerMBean(allTopicStat, "kafka:type=kafka7.ConsumerAllTopicStat")
 
   def getConsumerAllTopicStat(): ConsumerTopicStat = allTopicStat
 
@@ -51,7 +51,7 @@ object ConsumerTopicStat extends Logging {
     if (stat == null) {
       stat = new ConsumerTopicStat
       if (stats.putIfNotExists(topic, stat) == null)
-        Utils.registerMBean(stat, "kafka:type=kafka.ConsumerTopicStat." + topic)
+        Utils.registerMBean(stat, "kafka:type=kafka7.ConsumerTopicStat." + topic)
       else
         stat = stats.get(topic)
     }

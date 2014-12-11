@@ -24,7 +24,7 @@ import org.apache.log4j.jmx.LoggerDynamicMBean
 object Kafka extends Logging {
 
   def main(args: Array[String]): Unit = {
-    val kafkaLog4jMBeanName = "kafka:type=kafka.KafkaLog4j"
+    val kafkaLog4jMBeanName = "kafka:type=kafka7.KafkaLog4j"
     import org.apache.log4j.Logger
     Utils.registerMBean(new LoggerDynamicMBean(Logger.getRootLogger()), kafkaLog4jMBeanName)
 

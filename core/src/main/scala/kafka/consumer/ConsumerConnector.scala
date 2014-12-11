@@ -64,7 +64,7 @@ trait ConsumerConnector {
 }
 
 object Consumer extends Logging {
-  private val consumerStatsMBeanName = "kafka:type=kafka.ConsumerStats"
+  private val consumerStatsMBeanName = "kafka:type=kafka7.ConsumerStats"
 
   /**
    *  Create a ConsumerConnector

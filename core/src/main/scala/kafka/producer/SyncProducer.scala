@@ -221,7 +221,7 @@ class SyncProducerStats extends SyncProducerStatsMBean {
 }
 
 object SyncProducerStats extends Logging {
-  private val kafkaProducerstatsMBeanName = "kafka:type=kafka.KafkaProducerStats"
+  private val kafkaProducerstatsMBeanName = "kafka:type=kafka7.KafkaProducerStats"
   private val stats = new SyncProducerStats
   Utils.swallow(logger.warn, Utils.registerMBean(stats, kafkaProducerstatsMBeanName))
 

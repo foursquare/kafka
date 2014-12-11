@@ -97,8 +97,8 @@ class KafkaLog4jAppenderTest extends JUnitSuite with Logging {
     props.put("log4j.appender.KAFKA.layout","org.apache.log4j.PatternLayout")
     props.put("log4j.appender.KAFKA.layout.ConversionPattern","%-5p: %c - %m%n")
     props.put("log4j.appender.KAFKA.Topic", "test-topic")
-    props.put("log4j.appender.KAFKA.SerializerClass", "kafka.log4j.AppenderStringEncoder")
-    props.put("log4j.logger.kafka.log4j", "INFO, KAFKA")
+    props.put("log4j.appender.KAFKA.SerializerClass", "kafka7.log4j.AppenderStringEncoder")
+    props.put("log4j.logger.kafka7.log4j", "INFO, KAFKA")
 
     // port missing
     try {
@@ -114,8 +114,8 @@ class KafkaLog4jAppenderTest extends JUnitSuite with Logging {
     props.put("log4j.appender.KAFKA.layout","org.apache.log4j.PatternLayout")
     props.put("log4j.appender.KAFKA.layout.ConversionPattern","%-5p: %c - %m%n")
     props.put("log4j.appender.KAFKA.Topic", "test-topic")
-    props.put("log4j.appender.KAFKA.SerializerClass", "kafka.log4j.AppenderStringEncoder")
-    props.put("log4j.logger.kafka.log4j", "INFO, KAFKA")
+    props.put("log4j.appender.KAFKA.SerializerClass", "kafka7.log4j.AppenderStringEncoder")
+    props.put("log4j.logger.kafka7.log4j", "INFO, KAFKA")
 
     // host missing
     try {
@@ -130,9 +130,9 @@ class KafkaLog4jAppenderTest extends JUnitSuite with Logging {
     props.put("log4j.appender.KAFKA", "kafka7.producer.KafkaLog4jAppender")
     props.put("log4j.appender.KAFKA.layout","org.apache.log4j.PatternLayout")
     props.put("log4j.appender.KAFKA.layout.ConversionPattern","%-5p: %c - %m%n")
-    props.put("log4j.appender.KAFKA.SerializerClass", "kafka.log4j.AppenderStringEncoder")
+    props.put("log4j.appender.KAFKA.SerializerClass", "kafka7.log4j.AppenderStringEncoder")
     props.put("log4j.appender.KAFKA.BrokerList", "0:localhost:"+portBl.toString)
-    props.put("log4j.logger.kafka.log4j", "INFO, KAFKA")
+    props.put("log4j.logger.kafka7.log4j", "INFO, KAFKA")
 
     // topic missing
     try {
@@ -149,7 +149,7 @@ class KafkaLog4jAppenderTest extends JUnitSuite with Logging {
     props.put("log4j.appender.KAFKA.layout.ConversionPattern","%-5p: %c - %m%n")
     props.put("log4j.appender.KAFKA.BrokerList", "0:localhost:"+portBl.toString)
     props.put("log4j.appender.KAFKA.Topic", "test-topic")
-    props.put("log4j.logger.kafka.log4j", "INFO, KAFKA")
+    props.put("log4j.logger.kafka7.log4j", "INFO, KAFKA")
 
     // serializer missing
     try {
@@ -209,7 +209,7 @@ class KafkaLog4jAppenderTest extends JUnitSuite with Logging {
     props.put("log4j.appender.KAFKA.layout.ConversionPattern","%-5p: %c - %m%n")
     props.put("log4j.appender.KAFKA.BrokerList", "0:localhost:"+portBl.toString)
     props.put("log4j.appender.KAFKA.Topic", "test-topic")
-    props.put("log4j.logger.kafka.log4j", "INFO,KAFKA")
+    props.put("log4j.logger.kafka7.log4j", "INFO,KAFKA")
     props
   }
 
@@ -221,7 +221,7 @@ class KafkaLog4jAppenderTest extends JUnitSuite with Logging {
     props.put("log4j.appender.KAFKA.layout.ConversionPattern","%-5p: %c - %m%n")
     props.put("log4j.appender.KAFKA.ZkConnect", TestZKUtils.zookeeperConnect)
     props.put("log4j.appender.KAFKA.Topic", "test-topic")
-    props.put("log4j.logger.kafka.log4j", "INFO,KAFKA")
+    props.put("log4j.logger.kafka7.log4j", "INFO,KAFKA")
     props
   }
 

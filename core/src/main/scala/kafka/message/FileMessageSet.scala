@@ -272,7 +272,7 @@ class LogFlushStats extends LogFlushStatsMBean {
 }
 
 object LogFlushStats extends Logging {
-  private val LogFlushStatsMBeanName = "kafka:type=kafka.LogFlushStats"
+  private val LogFlushStatsMBeanName = "kafka:type=kafka7.LogFlushStats"
   private val stats = new LogFlushStats
   Utils.registerMBean(stats, LogFlushStatsMBeanName)
 

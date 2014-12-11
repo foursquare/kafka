@@ -216,7 +216,7 @@ class SimpleConsumerStats extends SimpleConsumerStatsMBean {
 }
 
 object SimpleConsumerStats extends Logging {
-  private val simpleConsumerstatsMBeanName = "kafka:type=kafka.SimpleConsumerStats"
+  private val simpleConsumerstatsMBeanName = "kafka:type=kafka7.SimpleConsumerStats"
   private val stats = new SimpleConsumerStats
   Utils.registerMBean(stats, simpleConsumerstatsMBeanName)
 

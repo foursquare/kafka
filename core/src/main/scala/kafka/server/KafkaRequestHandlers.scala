@@ -172,7 +172,7 @@ class BrokerTopicStat extends BrokerTopicStatMBean {
 object BrokerTopicStat extends Logging {
   private val stats = new Pool[String, BrokerTopicStat]
   private val allTopicStat = new BrokerTopicStat
-  Utils.registerMBean(allTopicStat, "kafka:type=kafka.BrokerAllTopicStat")
+  Utils.registerMBean(allTopicStat, "kafka:type=kafka7.BrokerAllTopicStat")
 
   def getBrokerAllTopicStat(): BrokerTopicStat = allTopicStat
 
@@ -181,7 +181,7 @@ object BrokerTopicStat extends Logging {
     if (stat == null) {
       stat = new BrokerTopicStat
       if (stats.putIfNotExists(topic, stat) == null)
-        Utils.registerMBean(stat, "kafka:type=kafka.BrokerTopicStat." + topic)
+        Utils.registerMBean(stat, "kafka:type=kafka7.BrokerTopicStat." + topic)
       else
         stat = stats.get(topic)
     }
