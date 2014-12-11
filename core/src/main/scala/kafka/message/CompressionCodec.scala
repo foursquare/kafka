@@ -15,7 +15,7 @@
  * limitations under the License.
 */
 
-package kafka.message
+package kafka7.message
 
 object CompressionCodec {
   def getCompressionCodec(codec: Int): CompressionCodec = {
@@ -23,7 +23,7 @@ object CompressionCodec {
       case NoCompressionCodec.codec => NoCompressionCodec
       case GZIPCompressionCodec.codec => GZIPCompressionCodec
       case SnappyCompressionCodec.codec => SnappyCompressionCodec
-      case _ => throw new kafka.common.UnknownCodecException("%d is an unknown compression codec".format(codec))
+      case _ => throw new kafka7.common.UnknownCodecException("%d is an unknown compression codec".format(codec))
     }
   }
 }

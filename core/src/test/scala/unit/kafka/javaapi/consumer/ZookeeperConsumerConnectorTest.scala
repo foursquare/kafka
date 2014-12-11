@@ -15,20 +15,20 @@
  * limitations under the License.
  */
 
-package kafka.javaapi.consumer
+package kafka7.javaapi.consumer
 
 import junit.framework.Assert._
-import kafka.zk.ZooKeeperTestHarness
-import kafka.integration.KafkaServerTestHarness
-import kafka.server.KafkaConfig
-import kafka.utils.{Utils, Logging}
-import kafka.utils.{TestZKUtils, TestUtils}
+import kafka7.zk.ZooKeeperTestHarness
+import kafka7.integration.KafkaServerTestHarness
+import kafka7.server.KafkaConfig
+import kafka7.utils.{Utils, Logging}
+import kafka7.utils.{TestZKUtils, TestUtils}
 import org.scalatest.junit.JUnit3Suite
 import scala.collection.JavaConversions._
-import kafka.javaapi.message.ByteBufferMessageSet
+import kafka7.javaapi.message.ByteBufferMessageSet
 import org.apache.log4j.{Level, Logger}
-import kafka.message.{NoCompressionCodec, CompressionCodec, Message}
-import kafka.consumer.{KafkaStream, ConsumerConfig}
+import kafka7.message.{NoCompressionCodec, CompressionCodec, Message}
+import kafka7.consumer.{KafkaStream, ConsumerConfig}
 
 
 class ZookeeperConsumerConnectorTest extends JUnit3Suite with KafkaServerTestHarness with ZooKeeperTestHarness with Logging {
@@ -50,7 +50,7 @@ class ZookeeperConsumerConnectorTest extends JUnit3Suite with KafkaServerTestHar
   val nMessages = 2
 
   def testBasic() {
-    val requestHandlerLogger = Logger.getLogger(classOf[kafka.server.KafkaRequestHandlers])
+    val requestHandlerLogger = Logger.getLogger(classOf[kafka7.server.KafkaRequestHandlers])
     requestHandlerLogger.setLevel(Level.FATAL)
     var actualMessages: List[Message] = Nil
 
@@ -71,7 +71,7 @@ class ZookeeperConsumerConnectorTest extends JUnit3Suite with KafkaServerTestHar
 
   def sendMessages(conf: KafkaConfig, messagesPerNode: Int, header: String, compressed: CompressionCodec): List[Message]= {
     var messages: List[Message] = Nil
-    val producer = kafka.javaapi.Implicits.toJavaSyncProducer(TestUtils.createProducer("localhost", conf.port))
+    val producer = kafka7.javaapi.Implicits.toJavaSyncProducer(TestUtils.createProducer("localhost", conf.port))
     for (partition <- 0 until numParts) {
       val ms = 0.until(messagesPerNode).map(x =>
         new Message((header + conf.brokerId + "-" + partition + "-" + x).getBytes)).toArray

@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package kafka.serializer
+package kafka7.serializer
 
-import kafka.message.Message
+import kafka7.message.Message
 
 trait Decoder[T] {
   def toEvent(message: Message):T

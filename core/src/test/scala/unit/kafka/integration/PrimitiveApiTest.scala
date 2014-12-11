@@ -15,20 +15,20 @@
  * limitations under the License.
  */
 
-package kafka.integration
+package kafka7.integration
 
 import scala.collection._
 import junit.framework.Assert._
-import kafka.api.{ProducerRequest, FetchRequest}
-import kafka.common.{OffsetOutOfRangeException, InvalidPartitionException}
-import kafka.server.{KafkaRequestHandlers, KafkaConfig}
+import kafka7.api.{ProducerRequest, FetchRequest}
+import kafka7.common.{OffsetOutOfRangeException, InvalidPartitionException}
+import kafka7.server.{KafkaRequestHandlers, KafkaConfig}
 import org.apache.log4j.{Level, Logger}
 import org.scalatest.junit.JUnit3Suite
 import java.util.Properties
-import kafka.producer.{ProducerData, Producer, ProducerConfig}
-import kafka.serializer.StringDecoder
-import kafka.utils.TestUtils
-import kafka.message.{DefaultCompressionCodec, NoCompressionCodec, Message, ByteBufferMessageSet}
+import kafka7.producer.{ProducerData, Producer, ProducerConfig}
+import kafka7.serializer.StringDecoder
+import kafka7.utils.TestUtils
+import kafka7.message.{DefaultCompressionCodec, NoCompressionCodec, Message, ByteBufferMessageSet}
 import java.io.File
 
 /**
@@ -47,7 +47,7 @@ class PrimitiveApiTest extends JUnit3Suite with ProducerConsumerTestHarness with
   def testDefaultEncoderProducerAndFetch() {
     val topic = "test-topic"
     val props = new Properties()
-    props.put("serializer.class", "kafka.serializer.StringEncoder")
+    props.put("serializer.class", "kafka7.serializer.StringEncoder")
     props.put("broker.list", "0:localhost:" + port)
     val config = new ProducerConfig(props)
 
@@ -67,7 +67,7 @@ class PrimitiveApiTest extends JUnit3Suite with ProducerConsumerTestHarness with
   def testDefaultEncoderProducerAndFetchWithCompression() {
     val topic = "test-topic"
     val props = new Properties()
-    props.put("serializer.class", "kafka.serializer.StringEncoder")
+    props.put("serializer.class", "kafka7.serializer.StringEncoder")
     props.put("broker.list", "0:localhost:" + port)
     props.put("compression", "true")
     val config = new ProducerConfig(props)

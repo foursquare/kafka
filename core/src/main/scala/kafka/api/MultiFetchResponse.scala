@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package kafka.api
+package kafka7.api
 
 import java.nio._
 import collection.mutable
-import kafka.utils.IteratorTemplate
-import kafka.message._
+import kafka7.utils.IteratorTemplate
+import kafka7.message._
 
 class MultiFetchResponse(val buffer: ByteBuffer, val numSets: Int, val offsets: Array[Long]) extends Iterable[ByteBufferMessageSet] {
   private val messageSets = new mutable.ListBuffer[ByteBufferMessageSet]

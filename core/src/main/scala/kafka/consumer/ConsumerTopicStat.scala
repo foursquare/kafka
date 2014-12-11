@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
 import java.util.concurrent.atomic.AtomicLong
-import kafka.utils.{Pool, Utils, threadsafe, Logging}
+import kafka7.utils.{Pool, Utils, threadsafe, Logging}
 
 trait ConsumerTopicStatMBean {
   def getMessagesPerTopic: Long

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.message
+package kafka7.message
 
 /**
  * Indicates that a message failed its checksum and is corrupt

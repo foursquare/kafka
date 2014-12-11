@@ -15,7 +15,7 @@
  * limitations under the License.
 */
 
-package kafka.producer.async
+package kafka7.producer.async
 
 /**
  * Indicates that the given config parameter has invalid value

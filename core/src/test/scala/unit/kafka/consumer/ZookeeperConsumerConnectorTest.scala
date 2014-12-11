@@ -15,19 +15,19 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
 import junit.framework.Assert._
-import kafka.zk.ZooKeeperTestHarness
-import kafka.integration.KafkaServerTestHarness
-import kafka.server.KafkaConfig
+import kafka7.zk.ZooKeeperTestHarness
+import kafka7.integration.KafkaServerTestHarness
+import kafka7.server.KafkaConfig
 import scala.collection._
-import kafka.utils.{Utils, Logging}
-import kafka.utils.{TestZKUtils, TestUtils}
+import kafka7.utils.{Utils, Logging}
+import kafka7.utils.{TestZKUtils, TestUtils}
 import org.scalatest.junit.JUnit3Suite
 import org.apache.log4j.{Level, Logger}
-import kafka.message._
-import kafka.serializer.StringDecoder
+import kafka7.message._
+import kafka7.serializer.StringDecoder
 
 class ZookeeperConsumerConnectorTest extends JUnit3Suite with KafkaServerTestHarness with ZooKeeperTestHarness with Logging {
 
@@ -51,7 +51,7 @@ class ZookeeperConsumerConnectorTest extends JUnit3Suite with KafkaServerTestHar
   val nMessages = 2
 
   def testBasic() {
-    val requestHandlerLogger = Logger.getLogger(classOf[kafka.server.KafkaRequestHandlers])
+    val requestHandlerLogger = Logger.getLogger(classOf[kafka7.server.KafkaRequestHandlers])
     requestHandlerLogger.setLevel(Level.FATAL)
 
     var actualMessages: List[Message] = Nil
@@ -126,7 +126,7 @@ class ZookeeperConsumerConnectorTest extends JUnit3Suite with KafkaServerTestHar
   }
 
   def testCompression() {
-    val requestHandlerLogger = Logger.getLogger(classOf[kafka.server.KafkaRequestHandlers])
+    val requestHandlerLogger = Logger.getLogger(classOf[kafka7.server.KafkaRequestHandlers])
     requestHandlerLogger.setLevel(Level.FATAL)
 
     println("Sending messages for 1st consumer")
@@ -179,7 +179,7 @@ class ZookeeperConsumerConnectorTest extends JUnit3Suite with KafkaServerTestHar
   }
 
   def testCompressionSetConsumption() {
-    val requestHandlerLogger = Logger.getLogger(classOf[kafka.server.KafkaRequestHandlers])
+    val requestHandlerLogger = Logger.getLogger(classOf[kafka7.server.KafkaRequestHandlers])
     requestHandlerLogger.setLevel(Level.FATAL)
 
     var actualMessages: List[Message] = Nil
@@ -213,7 +213,7 @@ class ZookeeperConsumerConnectorTest extends JUnit3Suite with KafkaServerTestHar
   }
 
   def testConsumerDecoder() {
-    val requestHandlerLogger = Logger.getLogger(classOf[kafka.server.KafkaRequestHandlers])
+    val requestHandlerLogger = Logger.getLogger(classOf[kafka7.server.KafkaRequestHandlers])
     requestHandlerLogger.setLevel(Level.FATAL)
 
     val sentMessages = sendMessages(nMessages, "batch1", NoCompressionCodec).

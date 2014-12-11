@@ -15,12 +15,12 @@
  * limitations under the License.
 */
 
-package kafka.javaapi.consumer
+package kafka7.javaapi.consumer
 
-import kafka.utils.threadsafe
-import kafka.javaapi.message.ByteBufferMessageSet
-import kafka.javaapi.MultiFetchResponse
-import kafka.api.FetchRequest
+import kafka7.utils.threadsafe
+import kafka7.javaapi.message.ByteBufferMessageSet
+import kafka7.javaapi.MultiFetchResponse
+import kafka7.api.FetchRequest
 
 /**
  * A consumer of kafka messages
@@ -30,7 +30,7 @@ class SimpleConsumer(val host: String,
                      val port: Int,
                      val soTimeout: Int,
                      val bufferSize: Int) {
-  val underlying = new kafka.consumer.SimpleConsumer(host, port, soTimeout, bufferSize)
+  val underlying = new kafka7.consumer.SimpleConsumer(host, port, soTimeout, bufferSize)
 
   /**
    *  Fetch a set of messages from a topic.
@@ -39,7 +39,7 @@ class SimpleConsumer(val host: String,
    *  @return a set of fetched messages
    */
   def fetch(request: FetchRequest): ByteBufferMessageSet = {
-    import kafka.javaapi.Implicits._
+    import kafka7.javaapi.Implicits._
     underlying.fetch(request)
   }
 
@@ -51,7 +51,7 @@ class SimpleConsumer(val host: String,
    */
   def multifetch(fetches: java.util.List[FetchRequest]): MultiFetchResponse = {
     import scala.collection.JavaConversions._
-    import kafka.javaapi.Implicits._
+    import kafka7.javaapi.Implicits._
     underlying.multifetch(asScalaBuffer(fetches): _*)
   }
 

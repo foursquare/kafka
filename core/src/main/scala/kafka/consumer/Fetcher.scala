@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
 import scala.collection._
-import kafka.cluster._
+import kafka7.cluster._
 import org.I0Itec.zkclient.ZkClient
 import java.util.concurrent.BlockingQueue
-import kafka.utils._
+import kafka7.utils._
 import java.lang.IllegalStateException
 
 /**

@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package kafka.javaapi.message
+package kafka7.javaapi.message
 
 import junit.framework.Assert._
 import org.scalatest.junit.JUnitSuite
 import org.junit.Test
-import kafka.utils.TestUtils
-import kafka.message.{DefaultCompressionCodec, NoCompressionCodec, CompressionCodec, Message}
+import kafka7.utils.TestUtils
+import kafka7.message.{DefaultCompressionCodec, NoCompressionCodec, CompressionCodec, Message}
 
 trait BaseMessageSetTestCases extends JUnitSuite {
   
@@ -61,7 +61,7 @@ trait BaseMessageSetTestCases extends JUnitSuite {
                  0L,
                  createMessageSet(Array[Message]()).sizeInBytes)
     assertEquals("Predicted size should equal actual size.", 
-                 kafka.message.MessageSet.messageSetSize(messages).toLong,
+                 kafka7.message.MessageSet.messageSetSize(messages).toLong,
                  createMessageSet(messages).sizeInBytes)
   }
 

@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package kafka.tools
+package kafka7.tools
 
 import java.net.URI
 import joptsimple._
-import kafka.api.FetchRequest
-import kafka.utils._
-import kafka.consumer._
+import kafka7.api.FetchRequest
+import kafka7.utils._
+import kafka7.consumer._
 
 /**
  * Command line program to dump out messages to standard out using the simple consumer

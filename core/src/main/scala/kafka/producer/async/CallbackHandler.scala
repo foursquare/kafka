@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-package kafka.producer.async
+package kafka7.producer.async
 
 import java.util.Properties
 

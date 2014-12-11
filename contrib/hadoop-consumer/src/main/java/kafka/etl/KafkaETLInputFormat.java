@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.etl;
+package kafka7.etl;
 
 
 import java.io.IOException;
 import java.net.URI;
 import java.util.Map;
-import kafka.consumer.SimpleConsumer;
+import kafka7.consumer.SimpleConsumer;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.BytesWritable;

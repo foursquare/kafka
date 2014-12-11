@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-package kafka.producer.async
+package kafka7.producer.async
 
 import java.util.Properties
-import kafka.utils.Utils
-import kafka.producer.SyncProducerConfig
+import kafka7.utils.Utils
+import kafka7.producer.SyncProducerConfig
 
 class AsyncProducerConfig(override val props: Properties) extends SyncProducerConfig(props)
         with AsyncProducerConfigShared {
@@ -45,7 +45,7 @@ trait AsyncProducerConfigShared {
   val batchSize = Utils.getInt(props, "batch.size", 200)
 
   /** the serializer class for events */
-  val serializerClass = Utils.getString(props, "serializer.class", "kafka.serializer.DefaultEncoder")
+  val serializerClass = Utils.getString(props, "serializer.class", "kafka7.serializer.DefaultEncoder")
 
   /** the callback handler for one or multiple events */
   val cbkHandler = Utils.getString(props, "callback.handler", null)

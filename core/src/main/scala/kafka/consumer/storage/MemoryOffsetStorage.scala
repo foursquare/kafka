@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.consumer.storage
+package kafka7.consumer.storage
 
 import java.util.concurrent._
 import java.util.concurrent.atomic._

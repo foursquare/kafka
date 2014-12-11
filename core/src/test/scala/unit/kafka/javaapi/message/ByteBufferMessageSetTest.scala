@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package kafka.javaapi.message
+package kafka7.javaapi.message
 
 import java.nio._
 import junit.framework.Assert._
 import org.junit.Test
-import kafka.message.{DefaultCompressionCodec, CompressionCodec, NoCompressionCodec, Message}
+import kafka7.message.{DefaultCompressionCodec, CompressionCodec, NoCompressionCodec, Message}
 
-class ByteBufferMessageSetTest extends kafka.javaapi.message.BaseMessageSetTestCases {
+class ByteBufferMessageSetTest extends kafka7.javaapi.message.BaseMessageSetTestCases {
 
   override def createMessageSet(messages: Seq[Message],
                                 compressed: CompressionCodec = NoCompressionCodec): ByteBufferMessageSet =

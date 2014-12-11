@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.log
+package kafka7.log
 
 import junit.framework.Assert._
 import org.junit.Test

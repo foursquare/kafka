@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package kafka.tools
+package kafka7.tools
 
 import java.io._
 import joptsimple._
-import kafka.producer._
-import kafka.utils.Utils
+import kafka7.producer._
+import kafka7.utils.Utils
 
 /**
  * Interactive shell for producing messages from the command line

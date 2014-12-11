@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package kafka.tools
+package kafka7.tools
 
 import java.io.BufferedReader
 import java.io.FileReader
 import joptsimple._
-import kafka.utils.{Logging, ZkUtils,ZKStringSerializer}
+import kafka7.utils.{Logging, ZkUtils,ZKStringSerializer}
 import org.I0Itec.zkclient.ZkClient
 
 

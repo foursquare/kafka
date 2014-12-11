@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package kafka.message
+package kafka7.message
 
-import kafka.utils.TestUtils
+import kafka7.utils.TestUtils
 import org.scalatest.junit.JUnitSuite
 import org.junit.Test
 import junit.framework.Assert._

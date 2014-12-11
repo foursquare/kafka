@@ -15,24 +15,24 @@
  * limitations under the License.
  */
 
-package kafka.producer.async
+package kafka7.producer.async
 
 import java.util.concurrent.{TimeUnit, LinkedBlockingQueue}
-import kafka.utils.{Utils, Logging}
+import kafka7.utils.{Utils, Logging}
 import java.util.concurrent.atomic.AtomicBoolean
-import kafka.api.ProducerRequest
-import kafka.serializer.Encoder
+import kafka7.api.ProducerRequest
+import kafka7.serializer.Encoder
 import java.util.{Random, Properties}
-import kafka.producer.{ProducerConfig, SyncProducer}
+import kafka7.producer.{ProducerConfig, SyncProducer}
 
 object AsyncProducer {
   val Shutdown = new Object
   val Random = new Random
-  val ProducerMBeanName = "kafka.producer.Producer:type=AsyncProducerStats"
-  val ProducerQueueSizeMBeanName = "kafka.producer.Producer:type=AsyncProducerQueueSizeStats"
+  val ProducerMBeanName = "kafka7.producer.Producer:type=AsyncProducerStats"
+  val ProducerQueueSizeMBeanName = "kafka7.producer.Producer:type=AsyncProducerQueueSizeStats"
 }
 
-private[kafka] class AsyncProducer[T](config: AsyncProducerConfig,
+private[kafka7] class AsyncProducer[T](config: AsyncProducerConfig,
                                       producer: SyncProducer,
                                       serializer: Encoder[T],
                                       eventHandler: EventHandler[T] = null,

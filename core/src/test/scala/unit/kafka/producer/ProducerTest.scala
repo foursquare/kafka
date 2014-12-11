@@ -15,25 +15,25 @@
  * limitations under the License.
 */
 
-package kafka.producer
+package kafka7.producer
 
 import async.AsyncProducer
 import java.util.Properties
 import org.apache.log4j.{Logger, Level}
-import kafka.server.{KafkaRequestHandlers, KafkaServer, KafkaConfig}
-import kafka.zk.EmbeddedZookeeper
+import kafka7.server.{KafkaRequestHandlers, KafkaServer, KafkaConfig}
+import kafka7.zk.EmbeddedZookeeper
 import org.junit.{After, Before, Test}
 import junit.framework.Assert
 import org.easymock.EasyMock
 import java.util.concurrent.ConcurrentHashMap
-import kafka.cluster.Partition
+import kafka7.cluster.Partition
 import org.scalatest.junit.JUnitSuite
-import kafka.common.{InvalidConfigException, UnavailableProducerException, InvalidPartitionException}
-import kafka.utils.{TestUtils, TestZKUtils, Utils}
-import kafka.serializer.{StringEncoder, Encoder}
-import kafka.consumer.SimpleConsumer
-import kafka.api.FetchRequest
-import kafka.message.{NoCompressionCodec, ByteBufferMessageSet, Message}
+import kafka7.common.{InvalidConfigException, UnavailableProducerException, InvalidPartitionException}
+import kafka7.utils.{TestUtils, TestZKUtils, Utils}
+import kafka7.serializer.{StringEncoder, Encoder}
+import kafka7.consumer.SimpleConsumer
+import kafka7.api.FetchRequest
+import kafka7.message.{NoCompressionCodec, ByteBufferMessageSet, Message}
 
 class ProducerTest extends JUnitSuite {
   private val topic = "test-topic"
@@ -106,8 +106,8 @@ class ProducerTest extends JUnitSuite {
   @Test
   def testSend() {
     val props = new Properties()
-    props.put("partitioner.class", "kafka.producer.StaticPartitioner")
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("partitioner.class", "kafka7.producer.StaticPartitioner")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
     val config = new ProducerConfig(props)
     val partitioner = new StaticPartitioner
@@ -143,7 +143,7 @@ class ProducerTest extends JUnitSuite {
   @Test
   def testSendSingleMessage() {
     val props = new Properties()
-    props.put("serializer.class", "kafka.serializer.StringEncoder")
+    props.put("serializer.class", "kafka7.serializer.StringEncoder")
     props.put("broker.list", "0:localhost:9092")
 
 
@@ -152,8 +152,8 @@ class ProducerTest extends JUnitSuite {
     val serializer = new StringSerializer
 
     // 2 sync producers
-    val syncProducers = new ConcurrentHashMap[Int, kafka.producer.SyncProducer]()
-    val syncProducer1 = EasyMock.createMock(classOf[kafka.producer.SyncProducer])
+    val syncProducers = new ConcurrentHashMap[Int, kafka7.producer.SyncProducer]()
+    val syncProducer1 = EasyMock.createMock(classOf[kafka7.producer.SyncProducer])
     // it should send to a random partition due to use of broker.list
     syncProducer1.send(topic, -1, new ByteBufferMessageSet(compressionCodec = NoCompressionCodec, messages = new Message("t".getBytes())))
     EasyMock.expectLastCall
@@ -176,8 +176,8 @@ class ProducerTest extends JUnitSuite {
   @Test
   def testInvalidPartition() {
     val props = new Properties()
-    props.put("partitioner.class", "kafka.producer.NegativePartitioner")
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("partitioner.class", "kafka7.producer.NegativePartitioner")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
     val config = new ProducerConfig(props)
 
@@ -208,7 +208,7 @@ class ProducerTest extends JUnitSuite {
       stringProducer1.close()
     }
 
-    props.put("serializer.class", "kafka.serializer.StringEncoder")
+    props.put("serializer.class", "kafka7.serializer.StringEncoder")
     val stringProducer2 = new Producer[String, String](new ProducerConfig(props))
     stringProducer2.send(new ProducerData[String, String](topic, "test", Array("test")))
     stringProducer2.close()
@@ -243,8 +243,8 @@ class ProducerTest extends JUnitSuite {
 
     // default for producer.type is "sync"
     val props = new Properties()
-    props.put("partitioner.class", "kafka.producer.NegativePartitioner")
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("partitioner.class", "kafka7.producer.NegativePartitioner")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
     val producerPool = new ProducerPool[String](new ProducerConfig(props), new StringSerializer,
       syncProducers, new ConcurrentHashMap[Int, AsyncProducer[String]]())
@@ -275,8 +275,8 @@ class ProducerTest extends JUnitSuite {
 
     // change producer.type to "async"
     val props = new Properties()
-    props.put("partitioner.class", "kafka.producer.NegativePartitioner")
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("partitioner.class", "kafka7.producer.NegativePartitioner")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("producer.type", "async")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
     val producerPool = new ProducerPool[String](new ProducerConfig(props), new StringSerializer,
@@ -302,8 +302,8 @@ class ProducerTest extends JUnitSuite {
 
     // default for producer.type is "sync"
     val props = new Properties()
-    props.put("partitioner.class", "kafka.producer.NegativePartitioner")
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("partitioner.class", "kafka7.producer.NegativePartitioner")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
     val producerPool = new ProducerPool[String](new ProducerConfig(props), new StringSerializer,
       syncProducers, new ConcurrentHashMap[Int, AsyncProducer[String]]())
@@ -333,8 +333,8 @@ class ProducerTest extends JUnitSuite {
 
     // change producer.type to "async"
     val props = new Properties()
-    props.put("partitioner.class", "kafka.producer.NegativePartitioner")
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("partitioner.class", "kafka7.producer.NegativePartitioner")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("producer.type", "async")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
     val producerPool = new ProducerPool[String](new ProducerConfig(props), new StringSerializer,
@@ -354,8 +354,8 @@ class ProducerTest extends JUnitSuite {
   @Test
   def testConfigBrokerPartitionInfoWithPartitioner {
     val props = new Properties()
-    props.put("partitioner.class", "kafka.producer.StaticPartitioner")
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("partitioner.class", "kafka7.producer.StaticPartitioner")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("producer.type", "async")
     props.put("broker.list", brokerId1 + ":" + "localhost" + ":" + port1 + ":" + 4 + "," +
                                        brokerId2 + ":" + "localhost" + ":" + port2 + ":" + 4)
@@ -372,7 +372,7 @@ class ProducerTest extends JUnitSuite {
   @Test
   def testConfigBrokerPartitionInfo() {
     val props = new Properties()
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("producer.type", "async")
     props.put("broker.list", brokerId1 + ":" + "localhost" + ":" + port1)
 
@@ -404,8 +404,8 @@ class ProducerTest extends JUnitSuite {
   @Test
   def testZKSendToNewTopic() {
     val props = new Properties()
-    props.put("serializer.class", "kafka.serializer.StringEncoder")
-    props.put("partitioner.class", "kafka.producer.StaticPartitioner")
+    props.put("serializer.class", "kafka7.serializer.StringEncoder")
+    props.put("partitioner.class", "kafka7.producer.StaticPartitioner")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
 
     val config = new ProducerConfig(props)
@@ -438,8 +438,8 @@ class ProducerTest extends JUnitSuite {
   @Test
   def testZKSendWithDeadBroker() {
     val props = new Properties()
-    props.put("serializer.class", "kafka.serializer.StringEncoder")
-    props.put("partitioner.class", "kafka.producer.StaticPartitioner")
+    props.put("serializer.class", "kafka7.serializer.StringEncoder")
+    props.put("partitioner.class", "kafka7.producer.StaticPartitioner")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
 
     val config = new ProducerConfig(props)
@@ -475,8 +475,8 @@ class ProducerTest extends JUnitSuite {
   @Test
   def testZKSendToExistingTopicWithNoBrokers() {
     val props = new Properties()
-    props.put("serializer.class", "kafka.serializer.StringEncoder")
-    props.put("partitioner.class", "kafka.producer.StaticPartitioner")
+    props.put("serializer.class", "kafka7.serializer.StringEncoder")
+    props.put("partitioner.class", "kafka7.producer.StaticPartitioner")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
 
     val config = new ProducerConfig(props)
@@ -532,8 +532,8 @@ class ProducerTest extends JUnitSuite {
   @Test
   def testPartitionedSendToNewTopic() {
     val props = new Properties()
-    props.put("partitioner.class", "kafka.producer.StaticPartitioner")
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("partitioner.class", "kafka7.producer.StaticPartitioner")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
 
     val config = new ProducerConfig(props)
@@ -584,8 +584,8 @@ class ProducerTest extends JUnitSuite {
   @Test
   def testPartitionedSendToNewBrokerInExistingTopic() {
     val props = new Properties()
-    props.put("partitioner.class", "kafka.producer.StaticPartitioner")
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("partitioner.class", "kafka7.producer.StaticPartitioner")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
 
     val config = new ProducerConfig(props)
@@ -648,7 +648,7 @@ class ProducerTest extends JUnitSuite {
   @Test
   def testDefaultPartitioner() {
     val props = new Properties()
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("producer.type", "async")
     props.put("broker.list", brokerId1 + ":" + "localhost" + ":" + port1)
     val config = new ProducerConfig(props)

@@ -14,31 +14,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.javaapi.producer
+package kafka7.javaapi.producer
 
-import kafka.producer.SyncProducerConfig
-import kafka.javaapi.message.ByteBufferMessageSet
+import kafka7.producer.SyncProducerConfig
+import kafka7.javaapi.message.ByteBufferMessageSet
 
-class SyncProducer(syncProducer: kafka.producer.SyncProducer) {
+class SyncProducer(syncProducer: kafka7.producer.SyncProducer) {
 
-  def this(config: SyncProducerConfig) = this(new kafka.producer.SyncProducer(config))
+  def this(config: SyncProducerConfig) = this(new kafka7.producer.SyncProducer(config))
 
   val underlying = syncProducer
 
   def send(topic: String, partition: Int, messages: ByteBufferMessageSet) {
-    import kafka.javaapi.Implicits._
+    import kafka7.javaapi.Implicits._
     underlying.send(topic, partition, messages)
   }
 
   def send(topic: String, messages: ByteBufferMessageSet): Unit = send(topic,
-                                                                       kafka.api.ProducerRequest.RandomPartition,
+                                                                       kafka7.api.ProducerRequest.RandomPartition,
                                                                        messages)
 
-  def multiSend(produces: Array[kafka.javaapi.ProducerRequest]) {
-    import kafka.javaapi.Implicits._
-    val produceRequests = new Array[kafka.api.ProducerRequest](produces.length)
+  def multiSend(produces: Array[kafka7.javaapi.ProducerRequest]) {
+    import kafka7.javaapi.Implicits._
+    val produceRequests = new Array[kafka7.api.ProducerRequest](produces.length)
     for(i <- 0 until produces.length)
-      produceRequests(i) = new kafka.api.ProducerRequest(produces(i).topic, produces(i).partition, produces(i).messages)
+      produceRequests(i) = new kafka7.api.ProducerRequest(produces(i).topic, produces(i).partition, produces(i).messages)
     underlying.multiSend(produceRequests)
   }
 

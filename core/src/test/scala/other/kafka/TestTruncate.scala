@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka
+package kafka7
 
 import java.io._
 import java.nio._

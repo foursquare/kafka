@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
-import kafka.message.ByteBufferMessageSet
+import kafka7.message.ByteBufferMessageSet
 
 private[consumer] class FetchedDataChunk(val messages: ByteBufferMessageSet,
                                          val topicInfo: PartitionTopicInfo,

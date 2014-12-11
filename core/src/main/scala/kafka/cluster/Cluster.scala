@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package kafka.cluster
+package kafka7.cluster
 
 import scala.collection._
 
 /**
  * The set of active brokers in the cluster
  */
-private[kafka] class Cluster {
+private[kafka7] class Cluster {
   
   private val brokers = new mutable.HashMap[Int, Broker]
   

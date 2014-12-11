@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.server
+package kafka7.server
 
-import kafka.utils.TestUtils
+import kafka7.utils.TestUtils
 import java.io.File
-import kafka.utils.Utils
-import kafka.api.FetchRequest
-import kafka.producer.{SyncProducer, SyncProducerConfig}
-import kafka.consumer.SimpleConsumer
+import kafka7.utils.Utils
+import kafka7.api.FetchRequest
+import kafka7.producer.{SyncProducer, SyncProducerConfig}
+import kafka7.consumer.SimpleConsumer
 import java.util.Properties
 import org.scalatest.junit.JUnitSuite
 import org.junit.Test
 import junit.framework.Assert._
-import kafka.message.{NoCompressionCodec, Message, ByteBufferMessageSet}
+import kafka7.message.{NoCompressionCodec, Message, ByteBufferMessageSet}
 
 class ServerShutdownTest extends JUnitSuite {
   val port = TestUtils.choosePort

@@ -15,12 +15,12 @@
  * limitations under the License.
 */
 
-package kafka.producer.async
+package kafka7.producer.async
 
 import java.util.concurrent.atomic.AtomicInteger
 import java.util.concurrent.BlockingQueue
 import org.apache.log4j.Logger
-import kafka.utils.Utils
+import kafka7.utils.Utils
 
 class AsyncProducerStats extends AsyncProducerStatsMBean {
   val droppedEvents = new AtomicInteger(0)

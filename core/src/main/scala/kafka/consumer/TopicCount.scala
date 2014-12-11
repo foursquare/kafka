@@ -15,16 +15,16 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
 import scala.collection._
 import scala.util.parsing.json.JSON
 import org.I0Itec.zkclient.ZkClient
 import java.util.regex.Pattern
-import kafka.utils.{ZKGroupDirs, ZkUtils, Logging}
+import kafka7.utils.{ZKGroupDirs, ZkUtils, Logging}
 
 
-private[kafka] trait TopicCount {
+private[kafka7] trait TopicCount {
   def getConsumerThreadIdsPerTopic: Map[String, Set[String]]
 
   def dbString: String
@@ -43,7 +43,7 @@ private[kafka] trait TopicCount {
   }
 }
 
-private[kafka] object TopicCount extends Logging {
+private[kafka7] object TopicCount extends Logging {
 
   /*
    * Example of whitelist topic count stored in ZooKeeper:
@@ -120,7 +120,7 @@ private[kafka] object TopicCount extends Logging {
 
 }
 
-private[kafka] class StaticTopicCount(val consumerIdString: String,
+private[kafka7] class StaticTopicCount(val consumerIdString: String,
                                 val topicCountMap: Map[String, Int])
                                 extends TopicCount {
 
@@ -156,7 +156,7 @@ private[kafka] class StaticTopicCount(val consumerIdString: String,
   }
 }
 
-private[kafka] class WildcardTopicCount(zkClient: ZkClient,
+private[kafka7] class WildcardTopicCount(zkClient: ZkClient,
                                         consumerIdString: String,
                                         topicFilter: TopicFilter,
                                         numStreams: Int) extends TopicCount {

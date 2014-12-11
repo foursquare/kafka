@@ -15,7 +15,7 @@
  * limitations under the License.
 */
 
-package kafka
+package kafka7
 
 import consumer.ConsumerConfig
 import utils.{ZKStringSerializer, ZkUtils, Utils}

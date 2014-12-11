@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package kafka.zk
+package kafka7.zk
 
 import junit.framework.Assert._
 import java.util.Collections
-import kafka.consumer.{ConsumerConfig, ZookeeperConsumerConnector}
+import kafka7.consumer.{ConsumerConfig, ZookeeperConsumerConnector}
 import java.lang.Thread
 import org.scalatest.junit.JUnit3Suite
-import kafka.utils.{TestUtils, ZkUtils, ZKGroupTopicDirs, TestZKUtils}
+import kafka7.utils.{TestUtils, ZkUtils, ZKGroupTopicDirs, TestZKUtils}
 
 class ZKLoadBalanceTest extends JUnit3Suite with ZooKeeperTestHarness {
   val zkConnect = TestZKUtils.zookeeperConnect

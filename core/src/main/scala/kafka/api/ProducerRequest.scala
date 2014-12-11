@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package kafka.api
+package kafka7.api
 
 import java.nio._
-import kafka.message._
-import kafka.network._
-import kafka.utils._
+import kafka7.message._
+import kafka7.network._
+import kafka7.utils._
 
 object ProducerRequest {
   val RandomPartition = -1

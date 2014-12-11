@@ -15,9 +15,9 @@
  * limitations under the License.
 */
 
-package kafka.producer
+package kafka7.producer
 
-import kafka.utils.Utils
+import kafka7.utils.Utils
 import java.util.Properties
 
 class SyncProducerConfig(val props: Properties) extends SyncProducerConfigShared {

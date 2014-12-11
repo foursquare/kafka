@@ -15,11 +15,11 @@
  * limitations under the License.
 */
 
-package kafka
+package kafka7
 
 import message.Message
 import org.apache.log4j.PropertyConfigurator
-import kafka.utils.Logging
+import kafka7.utils.Logging
 import serializer.Encoder
 
 object TestKafkaAppender extends Logging {

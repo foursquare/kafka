@@ -16,9 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package kafka.tools
+package kafka7.tools
 
-import kafka.consumer._
+import kafka7.consumer._
 import joptsimple._
 import java.net.URI
 

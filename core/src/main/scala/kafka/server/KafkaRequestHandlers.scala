@@ -15,21 +15,21 @@
  * limitations under the License.
  */
 
-package kafka.server
+package kafka7.server
 
 import org.apache.log4j.Logger
-import kafka.log._
-import kafka.network._
-import kafka.message._
-import kafka.api._
-import kafka.common.ErrorMapping
+import kafka7.log._
+import kafka7.network._
+import kafka7.message._
+import kafka7.api._
+import kafka7.common.ErrorMapping
 import java.util.concurrent.atomic.AtomicLong
-import kafka.utils._
+import kafka7.utils._
 
 /**
  * Logic to handle the various Kafka requests
  */
-private[kafka] class KafkaRequestHandlers(val logManager: LogManager) extends Logging {
+private[kafka7] class KafkaRequestHandlers(val logManager: LogManager) extends Logging {
   
   private val requestLogger = Logger.getLogger("kafka.request.logger")
 

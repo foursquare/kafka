@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.javaapi
+package kafka7.javaapi
 
-import kafka.network.Request
-import kafka.api.RequestKeys
+import kafka7.network.Request
+import kafka7.api.RequestKeys
 import java.nio.ByteBuffer
 
 class ProducerRequest(val topic: String,
                       val partition: Int,
-                      val messages: kafka.javaapi.message.ByteBufferMessageSet) extends Request(RequestKeys.Produce) {
+                      val messages: kafka7.javaapi.message.ByteBufferMessageSet) extends Request(RequestKeys.Produce) {
   import Implicits._
-  private val underlying = new kafka.api.ProducerRequest(topic, partition, messages)
+  private val underlying = new kafka7.api.ProducerRequest(topic, partition, messages)
 
   def writeTo(buffer: ByteBuffer) { underlying.writeTo(buffer) }
 

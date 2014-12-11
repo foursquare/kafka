@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.examples;
+package kafka7.examples;
 
 
 import java.nio.ByteBuffer;
-import kafka.message.Message;
+import kafka7.message.Message;
 
 public class ExampleUtils
 {

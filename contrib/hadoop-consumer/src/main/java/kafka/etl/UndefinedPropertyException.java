@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.etl;
+package kafka7.etl;
 
 public class UndefinedPropertyException extends RuntimeException {
 

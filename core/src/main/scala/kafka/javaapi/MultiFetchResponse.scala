@@ -15,9 +15,9 @@
  * limitations under the License.
 */
 
-package kafka.javaapi
+package kafka7.javaapi
 
-import kafka.utils.IteratorTemplate
+import kafka7.utils.IteratorTemplate
 import java.nio.ByteBuffer
 import message.ByteBufferMessageSet
 
@@ -27,7 +27,7 @@ class MultiFetchResponse(buffer: ByteBuffer, numSets: Int, offsets: Array[Long])
   val errorCode = underlyingBuffer.getShort
 
   import Implicits._
-  val underlying = new kafka.api.MultiFetchResponse(underlyingBuffer, numSets, offsets)
+  val underlying = new kafka7.api.MultiFetchResponse(underlyingBuffer, numSets, offsets)
 
   override def toString() = underlying.toString
 

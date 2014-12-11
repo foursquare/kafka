@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package kafka.network
+package kafka7.network
 
 import java.nio._
 import java.nio.channels._
-import kafka.utils._
+import kafka7.utils._
 
 @nonthreadsafe
-private[kafka] class BoundedByteBufferSend(val buffer: ByteBuffer) extends Send {
+private[kafka7] class BoundedByteBufferSend(val buffer: ByteBuffer) extends Send {
   
   private var sizeBuffer = ByteBuffer.allocate(4)
 

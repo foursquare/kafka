@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.utils
+package kafka7.utils
 
 import org.apache.log4j.Logger
 import org.scalatest.junit.JUnitSuite

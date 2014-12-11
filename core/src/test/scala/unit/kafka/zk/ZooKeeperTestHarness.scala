@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package kafka.zk
+package kafka7.zk
 
 import org.scalatest.junit.JUnit3Suite
 import org.I0Itec.zkclient.ZkClient
-import kafka.utils.ZKStringSerializer
+import kafka7.utils.ZKStringSerializer
 
 trait ZooKeeperTestHarness extends JUnit3Suite {
   val zkConnect: String

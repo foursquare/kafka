@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.message
+package kafka7.message
 
 import java.nio._
 import java.nio.channels._

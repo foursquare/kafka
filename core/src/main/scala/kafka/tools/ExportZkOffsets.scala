@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package kafka.tools
+package kafka7.tools
 
 import java.io.FileWriter
 import joptsimple._
-import kafka.utils.{Logging, ZkUtils, ZKStringSerializer,ZKGroupTopicDirs}
+import kafka7.utils.{Logging, ZkUtils, ZKStringSerializer,ZKGroupTopicDirs}
 import org.I0Itec.zkclient.ZkClient
 
 

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-package kafka.common
+package kafka7.common
 
 /**
  * Indicates that the partition id is not between 0 and numPartitions-1

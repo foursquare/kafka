@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package kafka.etl.impl;
+package kafka7.etl.impl;
 
-import kafka.etl.KafkaETLInputFormat;
-import kafka.etl.KafkaETLJob;
-import kafka.etl.Props;
+import kafka7.etl.KafkaETLInputFormat;
+import kafka7.etl.KafkaETLJob;
+import kafka7.etl.Props;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;

@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package kafka.producer
+package kafka7.producer
 
 import scala.collection.JavaConversions._
 import joptsimple._
 import java.util.Properties
 import java.io._
-import kafka.message._
-import kafka.serializer._
+import kafka7.message._
+import kafka7.serializer._
 
 object ConsoleProducer { 
 

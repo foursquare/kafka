@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package kafka.network
+package kafka7.network
 
 import java.nio._
 import java.nio.channels._
-import kafka.utils.Logging
+import kafka7.utils.Logging
 
 /**
  * Represents a stateful transfer of data to or from the network
@@ -43,7 +43,7 @@ private[network] trait Transmission extends Logging {
 /**
  * A transmission that is being received from a channel
  */
-private[kafka] trait Receive extends Transmission {
+private[kafka7] trait Receive extends Transmission {
   
   def buffer: ByteBuffer
   
@@ -63,7 +63,7 @@ private[kafka] trait Receive extends Transmission {
 /**
  * A transmission that is being sent out to the channel
  */
-private[kafka] trait Send extends Transmission {
+private[kafka7] trait Send extends Transmission {
     
   def writeTo(channel: GatheringByteChannel): Int
   

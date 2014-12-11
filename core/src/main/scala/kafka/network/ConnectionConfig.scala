@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.network
+package kafka7.network
 
 trait ConnectionConfig {
   val host: String

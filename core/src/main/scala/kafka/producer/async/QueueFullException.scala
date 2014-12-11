@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.producer.async
+package kafka7.producer.async
 
 /* Indicates the queue for sending messages is full of unsent messages */
 class QueueFullException(message: String) extends RuntimeException(message) {

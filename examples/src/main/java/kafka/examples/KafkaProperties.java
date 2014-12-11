@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.examples;
+package kafka7.examples;
 
 public interface KafkaProperties
 {

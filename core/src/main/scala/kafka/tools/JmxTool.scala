@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package kafka.tools
+package kafka7.tools
 
 import java.util.Date
 import java.text.SimpleDateFormat

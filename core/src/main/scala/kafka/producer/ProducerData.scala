@@ -15,7 +15,7 @@
  * limitations under the License.
 */
 
-package kafka.producer
+package kafka7.producer
 
 /**
  * Represents the data to be sent using the Producer send API

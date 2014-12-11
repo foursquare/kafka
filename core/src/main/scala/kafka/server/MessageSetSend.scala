@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package kafka.server
+package kafka7.server
 
 import java.nio._
 import java.nio.channels._
-import kafka.network._
-import kafka.message._
-import kafka.utils._
-import kafka.common.ErrorMapping
+import kafka7.network._
+import kafka7.message._
+import kafka7.utils._
+import kafka7.common.ErrorMapping
 
 /**
  * A zero-copy message response that writes the bytes needed directly from the file

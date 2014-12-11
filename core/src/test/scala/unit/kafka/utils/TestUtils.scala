@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.utils
+package kafka7.utils
 
 import java.io._
 import java.net._
@@ -24,11 +24,11 @@ import java.nio.channels._
 import java.util.Random
 import java.util.Properties
 import junit.framework.Assert._
-import kafka.server._
-import kafka.producer._
-import kafka.message._
+import kafka7.server._
+import kafka7.producer._
+import kafka7.message._
 import org.I0Itec.zkclient.ZkClient
-import kafka.consumer.ConsumerConfig
+import kafka7.consumer.ConsumerConfig
 
 /**
  * Utility functions to help with testing

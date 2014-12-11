@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package kafka.network
+package kafka7.network
 
-private[kafka] object Handler {
+private[kafka7] object Handler {
   
   /**
    * A request handler is a function that turns an incoming 

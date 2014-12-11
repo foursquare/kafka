@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
 import java.util.concurrent.CountDownLatch
-import kafka.common.ErrorMapping
-import kafka.cluster.{Partition, Broker}
-import kafka.api.{OffsetRequest, FetchRequest}
+import kafka7.common.ErrorMapping
+import kafka7.cluster.{Partition, Broker}
+import kafka7.api.{OffsetRequest, FetchRequest}
 import org.I0Itec.zkclient.ZkClient
-import kafka.utils._
+import kafka7.utils._
 import java.io.IOException
 
 class FetcherRunnable(val name: String,

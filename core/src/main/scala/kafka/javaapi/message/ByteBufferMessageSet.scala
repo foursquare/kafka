@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-package kafka.javaapi.message
+package kafka7.javaapi.message
 
 import java.nio.ByteBuffer
-import kafka.common.ErrorMapping
-import kafka.message._
+import kafka7.common.ErrorMapping
+import kafka7.message._
 
 class ByteBufferMessageSet(private val buffer: ByteBuffer,
                            private val initialOffset: Long = 0L,
                            private val errorCode: Int = ErrorMapping.NoError) extends MessageSet {
-  val underlying: kafka.message.ByteBufferMessageSet = new kafka.message.ByteBufferMessageSet(buffer,
+  val underlying: kafka7.message.ByteBufferMessageSet = new kafka7.message.ByteBufferMessageSet(buffer,
                                                                                               initialOffset,
                                                                                               errorCode)
   def this(buffer: ByteBuffer) = this(buffer, 0L, ErrorMapping.NoError)

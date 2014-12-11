@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.message
+package kafka7.message
 
 /**
  * Indicates the presense of a message that exceeds the maximum acceptable 

@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-package kafka.producer.async
+package kafka7.producer.async
 
 import java.util.Properties
-import kafka.producer.SyncProducer
-import kafka.serializer.Encoder
+import kafka7.producer.SyncProducer
+import kafka7.serializer.Encoder
 
 /**
  * Handler that dispatches the batched data from the queue of the

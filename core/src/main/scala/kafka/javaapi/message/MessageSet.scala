@@ -15,10 +15,10 @@
  * limitations under the License.
 */
 
-package kafka.javaapi.message
+package kafka7.javaapi.message
 
 
-import kafka.message.{MessageAndOffset, InvalidMessageException}
+import kafka7.message.{MessageAndOffset, InvalidMessageException}
 
 
 /**

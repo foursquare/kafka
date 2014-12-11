@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
 import java.util.Properties
-import kafka.utils.{ZKConfig, Utils}
-import kafka.api.OffsetRequest
+import kafka7.utils.{ZKConfig, Utils}
+import kafka7.api.OffsetRequest
 object ConsumerConfig {
   val SocketTimeout = 30 * 1000
   val SocketBufferSize = 64*1024

@@ -15,19 +15,19 @@
  * limitations under the License.
  */
 
-package kafka.producer.async
+package kafka7.producer.async
 
 import collection.mutable.HashMap
 import collection.mutable.Map
-import kafka.api.ProducerRequest
-import kafka.serializer.Encoder
+import kafka7.api.ProducerRequest
+import kafka7.serializer.Encoder
 import java.util.Properties
-import kafka.utils.Logging
-import kafka.producer.{ProducerConfig, SyncProducer}
-import kafka.message.{NoCompressionCodec, ByteBufferMessageSet}
+import kafka7.utils.Logging
+import kafka7.producer.{ProducerConfig, SyncProducer}
+import kafka7.message.{NoCompressionCodec, ByteBufferMessageSet}
 
 
-private[kafka] class DefaultEventHandler[T](val config: ProducerConfig,
+private[kafka7] class DefaultEventHandler[T](val config: ProducerConfig,
                                             val cbkHandler: CallbackHandler[T]) extends EventHandler[T] with Logging {
 
   override def init(props: Properties) { }

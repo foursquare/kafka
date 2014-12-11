@@ -15,22 +15,22 @@
  * limitations under the License.
  */
 
-package kafka.log
+package kafka7.log
 
 import java.io._
-import kafka.utils._
+import kafka7.utils._
 import scala.actors.Actor
 import scala.collection._
 import java.util.concurrent.CountDownLatch
-import kafka.server.{KafkaConfig, KafkaZooKeeper}
-import kafka.common.{InvalidTopicException, InvalidPartitionException}
-import kafka.api.OffsetRequest
+import kafka7.server.{KafkaConfig, KafkaZooKeeper}
+import kafka7.common.{InvalidTopicException, InvalidPartitionException}
+import kafka7.api.OffsetRequest
 
 /**
  * The guy who creates and hands out logs
  */
 @threadsafe
-private[kafka] class LogManager(val config: KafkaConfig,
+private[kafka7] class LogManager(val config: KafkaConfig,
                                 private val scheduler: KafkaScheduler,
                                 private val time: Time,
                                 val logCleanupIntervalMs: Long,

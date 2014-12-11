@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.api
+package kafka7.api
 
 object RequestKeys {
   val Produce: Short = 0

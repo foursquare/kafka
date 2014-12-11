@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package kafka.network
+package kafka7.network
 
 import java.nio._
 
-private[kafka] abstract class Request(val id: Short) {
+private[kafka7] abstract class Request(val id: Short) {
 
   def sizeInBytes: Int
   

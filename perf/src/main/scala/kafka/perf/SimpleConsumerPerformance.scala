@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package kafka.perf
+package kafka7.perf
 
 import java.net.URI
-import kafka.utils._
-import kafka.consumer.SimpleConsumer
+import kafka7.utils._
+import kafka7.consumer.SimpleConsumer
 import org.apache.log4j.Logger
-import kafka.api.{OffsetRequest, FetchRequest}
+import kafka7.api.{OffsetRequest, FetchRequest}
 import java.text.SimpleDateFormat
 
 /**

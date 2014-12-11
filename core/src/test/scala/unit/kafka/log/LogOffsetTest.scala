@@ -15,19 +15,19 @@
  * limitations under the License.
  */
 
-package kafka.log
+package kafka7.log
 
 import java.io.File
-import kafka.utils._
-import kafka.server.{KafkaConfig, KafkaServer}
+import kafka7.utils._
+import kafka7.server.{KafkaConfig, KafkaServer}
 import junit.framework.Assert._
 import java.util.{Random, Properties}
-import kafka.api.{FetchRequest, OffsetRequest}
+import kafka7.api.{FetchRequest, OffsetRequest}
 import collection.mutable.WrappedArray
-import kafka.consumer.SimpleConsumer
+import kafka7.consumer.SimpleConsumer
 import org.scalatest.junit.JUnitSuite
 import org.junit.{After, Before, Test}
-import kafka.message.{NoCompressionCodec, ByteBufferMessageSet, Message}
+import kafka7.message.{NoCompressionCodec, ByteBufferMessageSet, Message}
 import org.apache.log4j._
 
 object LogOffsetTest {

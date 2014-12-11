@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.etl;
+package kafka7.etl;
 
 
 import java.io.IOException;
@@ -23,13 +23,13 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import kafka.api.FetchRequest;
-import kafka.api.OffsetRequest;
-import kafka.common.ErrorMapping;
-import kafka.javaapi.MultiFetchResponse;
-import kafka.javaapi.consumer.SimpleConsumer;
-import kafka.javaapi.message.ByteBufferMessageSet;
-import kafka.message.MessageAndOffset;
+import kafka7.api.FetchRequest;
+import kafka7.api.OffsetRequest;
+import kafka7.common.ErrorMapping;
+import kafka7.javaapi.MultiFetchResponse;
+import kafka7.javaapi.consumer.SimpleConsumer;
+import kafka7.javaapi.message.ByteBufferMessageSet;
+import kafka7.message.MessageAndOffset;
 import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.mapred.JobConf;
 import org.apache.hadoop.mapred.OutputCollector;

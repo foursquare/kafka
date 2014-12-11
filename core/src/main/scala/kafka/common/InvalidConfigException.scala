@@ -15,7 +15,7 @@
  * limitations under the License.
 */
 
-package kafka.common
+package kafka7.common
 
 /**
  * Indicates that the given config parameter has invalid value

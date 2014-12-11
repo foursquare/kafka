@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.producer.async
+package kafka7.producer.async
 
 /* Indicates that client is sending event to a closed queue */
 class QueueClosedException(message: String) extends RuntimeException(message) {

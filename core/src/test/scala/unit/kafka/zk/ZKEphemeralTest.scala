@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package kafka.zk
+package kafka7.zk
 
-import kafka.consumer.ConsumerConfig
+import kafka7.consumer.ConsumerConfig
 import org.I0Itec.zkclient.ZkClient
-import kafka.utils.{ZkUtils, ZKStringSerializer}
-import kafka.utils.{TestZKUtils, TestUtils}
+import kafka7.utils.{ZkUtils, ZKStringSerializer}
+import kafka7.utils.{TestZKUtils, TestUtils}
 import org.junit.Assert
 import org.scalatest.junit.JUnit3Suite
 

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-package kafka.common
+package kafka7.common
 
 /**
  * Indicates a producer pool initialization problem

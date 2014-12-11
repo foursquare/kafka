@@ -15,7 +15,7 @@
  * limitations under the License.
 */
 
-package kafka.perf
+package kafka7.perf
 
 import joptsimple.OptionParser
 

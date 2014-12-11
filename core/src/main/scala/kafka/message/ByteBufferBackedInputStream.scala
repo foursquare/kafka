@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.message
+package kafka7.message
 
 import java.io.InputStream
 import java.nio.ByteBuffer

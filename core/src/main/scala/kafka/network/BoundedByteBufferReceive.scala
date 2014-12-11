@@ -15,18 +15,18 @@
  * limitations under the License.
  */
 
-package kafka.network
+package kafka7.network
 
 import java.nio._
 import java.nio.channels._
-import kafka.utils._
+import kafka7.utils._
 
 /**
  * Represents a communication between the client and server
  * 
  */
 @nonthreadsafe
-private[kafka] class BoundedByteBufferReceive(val maxSize: Int) extends Receive {
+private[kafka7] class BoundedByteBufferReceive(val maxSize: Int) extends Receive {
   
   private val sizeBuffer: ByteBuffer = ByteBuffer.allocate(4)
   private var contentBuffer: ByteBuffer = null

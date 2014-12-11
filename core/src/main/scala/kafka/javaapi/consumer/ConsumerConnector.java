@@ -15,15 +15,15 @@
  * limitations under the License.
 */
 
-package kafka.javaapi.consumer;
+package kafka7.javaapi.consumer;
 
 
 import java.util.List;
 import java.util.Map;
-import kafka.consumer.KafkaStream;
-import kafka.consumer.TopicFilter;
-import kafka.message.Message;
-import kafka.serializer.Decoder;
+import kafka7.consumer.KafkaStream;
+import kafka7.consumer.TopicFilter;
+import kafka7.message.Message;
+import kafka7.serializer.Decoder;
 
 public interface ConsumerConnector {
   /**

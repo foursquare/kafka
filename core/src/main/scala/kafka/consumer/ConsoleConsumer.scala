@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
 import scala.collection.mutable._
 import scala.collection.JavaConversions._
@@ -24,9 +24,9 @@ import joptsimple._
 import java.util.Properties
 import java.util.Random
 import java.io.PrintStream
-import kafka.message._
-import kafka.utils.{Utils, Logging}
-import kafka.utils.ZKStringSerializer
+import kafka7.message._
+import kafka7.utils.{Utils, Logging}
+import kafka7.utils.ZKStringSerializer
 
 /**
  * Consumer that dumps messages out to standard out.

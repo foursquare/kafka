@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.utils
+package kafka7.utils
 
 import java.io._
 import java.nio._
@@ -27,7 +27,7 @@ import javax.management._
 import java.util.Properties
 import scala.collection._
 import scala.collection.mutable
-import kafka.message.{NoCompressionCodec, CompressionCodec}
+import kafka7.message.{NoCompressionCodec, CompressionCodec}
 import org.I0Itec.zkclient.ZkClient
 import joptsimple.{OptionSpec, OptionSet, OptionParser}
 

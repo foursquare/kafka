@@ -15,13 +15,13 @@
  * limitations under the License.
 */
 
-package kafka.producer
+package kafka7.producer
 
 import async.MissingConfigException
 import org.apache.log4j.spi.LoggingEvent
 import org.apache.log4j.AppenderSkeleton
 import org.apache.log4j.helpers.LogLog
-import kafka.utils.Logging
+import kafka7.utils.Logging
 import java.util.{Properties, Date}
 import scala.collection._
 
@@ -62,8 +62,8 @@ class KafkaLog4jAppender extends AppenderSkeleton with Logging {
     if(topic == null)
       throw new MissingConfigException("topic must be specified by the Kafka log4j appender")
     if(serializerClass == null) {
-      serializerClass = "kafka.serializer.StringEncoder"
-      LogLog.warn("Using default encoder - kafka.serializer.StringEncoder")
+      serializerClass = "kafka7.serializer.StringEncoder"
+      LogLog.warn("Using default encoder - kafka7.serializer.StringEncoder")
     }
     props.put("serializer.class", serializerClass)
     val config : ProducerConfig = new ProducerConfig(props)

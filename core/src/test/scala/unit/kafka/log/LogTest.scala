@@ -15,16 +15,16 @@
  * limitations under the License.
  */
 
-package kafka.log
+package kafka7.log
 
 import java.io._
 import java.util.ArrayList
 import junit.framework.Assert._
 import org.scalatest.junit.JUnitSuite
 import org.junit.{After, Before, Test}
-import kafka.utils.{Utils, TestUtils, Range}
-import kafka.common.OffsetOutOfRangeException
-import kafka.message.{NoCompressionCodec, ByteBufferMessageSet, Message}
+import kafka7.utils.{Utils, TestUtils, Range}
+import kafka7.common.OffsetOutOfRangeException
+import kafka7.message.{NoCompressionCodec, ByteBufferMessageSet, Message}
 
 class LogTest extends JUnitSuite {
   

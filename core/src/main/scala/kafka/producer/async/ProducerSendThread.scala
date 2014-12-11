@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package kafka.producer.async
+package kafka7.producer.async
 
-import kafka.utils.{SystemTime, Logging}
+import kafka7.utils.{SystemTime, Logging}
 import java.util.concurrent.{TimeUnit, CountDownLatch, BlockingQueue}
 import collection.mutable.ListBuffer
-import kafka.serializer.Encoder
-import kafka.producer.SyncProducer
+import kafka7.serializer.Encoder
+import kafka7.producer.SyncProducer
 
 private[async] class ProducerSendThread[T](val threadName: String,
                                            val queue: BlockingQueue[QueueItem[T]],

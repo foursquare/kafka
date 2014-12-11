@@ -15,16 +15,16 @@
  * limitations under the License.
  */
 
-package kafka.perf
+package kafka7.perf
 
 import java.util.concurrent.{CountDownLatch, Executors}
 import java.util.concurrent.atomic.AtomicLong
-import kafka.producer._
+import kafka7.producer._
 import org.apache.log4j.Logger
-import kafka.message.{CompressionCodec, Message}
+import kafka7.message.{CompressionCodec, Message}
 import java.text.SimpleDateFormat
 import java.util.{Random, Properties}
-import kafka.utils.Logging
+import kafka7.utils.Logging
 
 /**
  * Load test for the producer

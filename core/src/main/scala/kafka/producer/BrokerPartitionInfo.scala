@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-package kafka.producer
+package kafka7.producer
 
 import collection.mutable.Map
 import collection.SortedSet
-import kafka.cluster.{Broker, Partition}
+import kafka7.cluster.{Broker, Partition}
 
 trait BrokerPartitionInfo {
   /**

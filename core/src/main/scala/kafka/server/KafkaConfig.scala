@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package kafka.server
+package kafka7.server
 
 import java.util.Properties
-import kafka.utils.{Utils, ZKConfig}
-import kafka.message.Message
+import kafka7.utils.{Utils, ZKConfig}
+import kafka7.message.Message
 
 /**
  * Configuration settings for the kafka server

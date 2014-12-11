@@ -15,21 +15,21 @@
  * limitations under the License.
  */
 
-package kafka.cluster
+package kafka7.cluster
 
-import kafka.utils._
+import kafka7.utils._
 
 /**
  * A Kafka broker
  */
-private[kafka] object Broker {
+private[kafka7] object Broker {
   def createBroker(id: Int, brokerInfoString: String): Broker = {
     val brokerInfo = brokerInfoString.split(":")
     new Broker(id, brokerInfo(0), brokerInfo(1), brokerInfo(2).toInt)
   }
 }
 
-private[kafka] class Broker(val id: Int, val creatorId: String, val host: String, val port: Int) {
+private[kafka7] class Broker(val id: Int, val creatorId: String, val host: String, val port: Int) {
   
   override def toString(): String = new String("id:" + id + ",creatorId:" + creatorId + ",host:" + host + ",port:" + port)
 

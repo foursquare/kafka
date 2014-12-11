@@ -15,17 +15,17 @@
  * limitations under the License.
  */
 
-package kafka.integration
+package kafka7.integration
 
 import scala.collection._
 import junit.framework.Assert._
-import kafka.common.OffsetOutOfRangeException
-import kafka.api.{ProducerRequest, FetchRequest}
-import kafka.server.{KafkaRequestHandlers, KafkaServer, KafkaConfig}
+import kafka7.common.OffsetOutOfRangeException
+import kafka7.api.{ProducerRequest, FetchRequest}
+import kafka7.server.{KafkaRequestHandlers, KafkaServer, KafkaConfig}
 import org.apache.log4j.{Level, Logger}
 import org.scalatest.junit.JUnit3Suite
-import kafka.utils.{TestUtils, Utils}
-import kafka.message.{NoCompressionCodec, Message, ByteBufferMessageSet}
+import kafka7.utils.{TestUtils, Utils}
+import kafka7.message.{NoCompressionCodec, Message, ByteBufferMessageSet}
 
 /**
  * End to end tests of the primitive apis against a local server

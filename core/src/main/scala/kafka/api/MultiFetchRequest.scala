@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package kafka.api
+package kafka7.api
 
 import java.nio._
-import kafka.network._
+import kafka7.network._
 
 object MultiFetchRequest {
   def readFrom(buffer: ByteBuffer): MultiFetchRequest = {

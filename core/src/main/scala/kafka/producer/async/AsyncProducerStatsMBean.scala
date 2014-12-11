@@ -15,7 +15,7 @@
  * limitations under the License.
 */
 
-package kafka.producer.async
+package kafka7.producer.async
 
 trait AsyncProducerStatsMBean {
   def getAsyncProducerEvents: Int

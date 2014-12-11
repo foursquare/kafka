@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package kafka.api
+package kafka7.api
 
 import java.nio.ByteBuffer
-import kafka.network.Request
+import kafka7.network.Request
 
 object MultiProducerRequest {
   def readFrom(buffer: ByteBuffer): MultiProducerRequest = {

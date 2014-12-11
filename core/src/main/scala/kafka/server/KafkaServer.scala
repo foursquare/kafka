@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package kafka.server
+package kafka7.server
 
-import kafka.log.LogManager
+import kafka7.log.LogManager
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.atomic.AtomicBoolean
-import kafka.utils.{Mx4jLoader, Utils, SystemTime, KafkaScheduler, Logging}
-import kafka.network.{SocketServerStats, SocketServer}
+import kafka7.utils.{Mx4jLoader, Utils, SystemTime, KafkaScheduler, Logging}
+import kafka7.network.{SocketServerStats, SocketServer}
 import java.io.File
 
 /**

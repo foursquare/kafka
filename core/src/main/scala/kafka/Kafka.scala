@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka
+package kafka7
 
 import server.{KafkaConfig, KafkaServerStartable, KafkaServer}
 import utils.{Utils, Logging}

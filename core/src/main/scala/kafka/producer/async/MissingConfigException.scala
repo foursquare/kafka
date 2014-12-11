@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.producer.async
+package kafka7.producer.async
 
 /* Indicates any missing configuration parameter */
 class MissingConfigException(message: String) extends RuntimeException(message) {

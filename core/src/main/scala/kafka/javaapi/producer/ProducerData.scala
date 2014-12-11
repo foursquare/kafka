@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-package kafka.javaapi.producer
+package kafka7.javaapi.producer
 
 import scala.collection.JavaConversions._
 

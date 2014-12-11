@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package kafka.log
+package kafka7.log
 
 import java.io._
 import junit.framework.Assert._
-import kafka.server.KafkaConfig
+import kafka7.server.KafkaConfig
 import org.scalatest.junit.JUnitSuite
 import org.junit.{After, Before, Test}
-import kafka.utils.{Utils, MockTime, TestUtils}
-import kafka.common.OffsetOutOfRangeException
+import kafka7.utils.{Utils, MockTime, TestUtils}
+import kafka7.common.OffsetOutOfRangeException
 
 class LogManagerTest extends JUnitSuite {
 

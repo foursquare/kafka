@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
-import kafka.utils.{IteratorTemplate, Logging}
+import kafka7.utils.{IteratorTemplate, Logging}
 import java.util.concurrent.{TimeUnit, BlockingQueue}
-import kafka.serializer.Decoder
+import kafka7.serializer.Decoder
 import java.util.concurrent.atomic.AtomicReference
-import kafka.message.{MessageAndOffset, MessageAndMetadata}
+import kafka7.message.{MessageAndOffset, MessageAndMetadata}
 
 
 /**

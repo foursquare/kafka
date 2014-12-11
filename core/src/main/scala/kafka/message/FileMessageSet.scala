@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package kafka.message
+package kafka7.message
 
 import java.io._
 import java.nio._
 import java.nio.channels._
 import java.util.concurrent.atomic._
 
-import kafka.utils._
+import kafka7.utils._
 
 /**
  * An on-disk message set. The set can be opened either mutably or immutably. Mutation attempts
@@ -31,7 +31,7 @@ import kafka.utils._
  * messages will be read
  */
 @nonthreadsafe
-class FileMessageSet private[kafka](private[message] val channel: FileChannel,
+class FileMessageSet private[kafka7](private[message] val channel: FileChannel,
                                     private[message] val offset: Long,
                                     private[message] val limit: Long,
                                     val mutable: Boolean,

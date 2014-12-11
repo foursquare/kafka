@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.common
+package kafka7.common
 
 /**
  * Indicates the client has requested a range no longer available on the server

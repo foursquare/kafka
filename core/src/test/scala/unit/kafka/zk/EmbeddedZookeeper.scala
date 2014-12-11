@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package kafka.zk
+package kafka7.zk
 
 import org.apache.zookeeper.server.ZooKeeperServer
 import org.apache.zookeeper.server.NIOServerCnxn
-import kafka.utils.TestUtils
+import kafka7.utils.TestUtils
 import java.net.InetSocketAddress
-import kafka.utils.Utils
+import kafka7.utils.Utils
 
 class EmbeddedZookeeper(val connectString: String) {
   val snapshotDir = TestUtils.tempDir()

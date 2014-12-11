@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package kafka.integration
+package kafka7.integration
 
-import kafka.server.{KafkaServer, KafkaConfig}
+import kafka7.server.{KafkaServer, KafkaConfig}
 import org.scalatest.junit.JUnit3Suite
 import org.apache.log4j.Logger
 import java.util.Properties
-import kafka.consumer.SimpleConsumer
-import kafka.utils.TestUtils
-import kafka.api.{OffsetRequest, FetchRequest}
+import kafka7.consumer.SimpleConsumer
+import kafka7.utils.TestUtils
+import kafka7.api.{OffsetRequest, FetchRequest}
 import junit.framework.Assert._
 
 class BackwardsCompatibilityTest extends JUnit3Suite {

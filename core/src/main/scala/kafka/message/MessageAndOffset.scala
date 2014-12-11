@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.message
+package kafka7.message
 
 
 case class MessageAndOffset(message: Message, offset: Long)

@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.producer
+package kafka7.producer
 
-import kafka.utils.{ZKStringSerializer, ZkUtils, ZKConfig}
+import kafka7.utils.{ZKStringSerializer, ZkUtils, ZKConfig}
 import collection.mutable.HashMap
 import collection.mutable.Map
-import kafka.utils.Logging
+import kafka7.utils.Logging
 import collection.immutable.TreeSet
-import kafka.cluster.{Broker, Partition}
+import kafka7.cluster.{Broker, Partition}
 import org.apache.zookeeper.Watcher.Event.KeeperState
 import org.I0Itec.zkclient.{IZkStateListener, IZkChildListener, ZkClient}
 import collection.SortedSet

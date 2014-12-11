@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package kafka.message
+package kafka7.message
 
 import java.io.ByteArrayOutputStream
 import java.io.IOException
 import java.io.InputStream
 import java.nio.ByteBuffer
-import kafka.utils._
+import kafka7.utils._
 
 abstract sealed class CompressionFacade(inputStream: InputStream, outputStream: ByteArrayOutputStream) {
   def close() = {
@@ -81,13 +81,13 @@ object CompressionFactory {
     case GZIPCompressionCodec => new GZIPCompression(null,stream)
     case SnappyCompressionCodec => new SnappyCompression(null,stream)
     case _ =>
-      throw new kafka.common.UnknownCodecException("Unknown Codec: " + compressionCodec)
+      throw new kafka7.common.UnknownCodecException("Unknown Codec: " + compressionCodec)
   }
   def apply(compressionCodec: CompressionCodec, stream: InputStream): CompressionFacade = compressionCodec match {
     case GZIPCompressionCodec => new GZIPCompression(stream,null)
     case SnappyCompressionCodec => new SnappyCompression(stream,null)
     case _ =>
-      throw new kafka.common.UnknownCodecException("Unknown Codec: " + compressionCodec)
+      throw new kafka7.common.UnknownCodecException("Unknown Codec: " + compressionCodec)
   }
 }
 

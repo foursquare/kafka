@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package kafka.integration
+package kafka7.integration
 
-import kafka.server._
-import kafka.utils.{Utils, TestUtils}
+import kafka7.server._
+import kafka7.utils.{Utils, TestUtils}
 import org.scalatest.junit.JUnit3Suite
 
 /**

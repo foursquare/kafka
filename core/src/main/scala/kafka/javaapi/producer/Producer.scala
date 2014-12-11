@@ -15,13 +15,13 @@
  * limitations under the License.
 */
 
-package kafka.javaapi.producer
+package kafka7.javaapi.producer
 
-import kafka.utils.Utils
-import kafka.producer.async.QueueItem
+import kafka7.utils.Utils
+import kafka7.producer.async.QueueItem
 import java.util.Properties
-import kafka.producer.{ProducerPool, ProducerConfig, Partitioner}
-import kafka.serializer.Encoder
+import kafka7.producer.{ProducerPool, ProducerConfig, Partitioner}
+import kafka7.serializer.Encoder
 
 class Producer[K,V](config: ProducerConfig,
                     partitioner: Partitioner[K],
@@ -30,7 +30,7 @@ class Producer[K,V](config: ProducerConfig,
                                                           /* use the other constructor*/
 {
 
-  private val underlying = new kafka.producer.Producer[K,V](config, partitioner, producerPool, populateProducerPool, null)
+  private val underlying = new kafka7.producer.Producer[K,V](config, partitioner, producerPool, populateProducerPool, null)
 
   /**
    * This constructor can be used when all config parameters will be specified through the
@@ -45,33 +45,33 @@ class Producer[K,V](config: ProducerConfig,
    * that would otherwise be instantiated via reflection. i.e. encoder, partitioner, event handler and
    * callback handler
    * @param config Producer Configuration object
-   * @param encoder Encoder used to convert an object of type V to a kafka.message.Message
-   * @param eventHandler the class that implements kafka.javaapi.producer.async.IEventHandler[T] used to
-   * dispatch a batch of produce requests, using an instance of kafka.javaapi.producer.SyncProducer
-   * @param cbkHandler the class that implements kafka.javaapi.producer.async.CallbackHandler[T] used to inject
-   * callbacks at various stages of the kafka.javaapi.producer.AsyncProducer pipeline.
-   * @param partitioner class that implements the kafka.javaapi.producer.Partitioner[K], used to supply a custom
+   * @param encoder Encoder used to convert an object of type V to a kafka7.message.Message
+   * @param eventHandler the class that implements kafka7.javaapi.producer.async.IEventHandler[T] used to
+   * dispatch a batch of produce requests, using an instance of kafka7.javaapi.producer.SyncProducer
+   * @param cbkHandler the class that implements kafka7.javaapi.producer.async.CallbackHandler[T] used to inject
+   * callbacks at various stages of the kafka7.javaapi.producer.AsyncProducer pipeline.
+   * @param partitioner class that implements the kafka7.javaapi.producer.Partitioner[K], used to supply a custom
    * partitioning strategy on the message key (of type K) that is specified through the ProducerData[K, T]
    * object in the  send API
    */
   def this(config: ProducerConfig,
            encoder: Encoder[V],
-           eventHandler: kafka.javaapi.producer.async.EventHandler[V],
-           cbkHandler: kafka.javaapi.producer.async.CallbackHandler[V],
+           eventHandler: kafka7.javaapi.producer.async.EventHandler[V],
+           cbkHandler: kafka7.javaapi.producer.async.CallbackHandler[V],
            partitioner: Partitioner[K]) = {
     this(config, partitioner,
          new ProducerPool[V](config, encoder,
-                             new kafka.producer.async.EventHandler[V] {
+                             new kafka7.producer.async.EventHandler[V] {
                                override def init(props: Properties) { eventHandler.init(props) }
-                               override def handle(events: Seq[QueueItem[V]], producer: kafka.producer.SyncProducer,
+                               override def handle(events: Seq[QueueItem[V]], producer: kafka7.producer.SyncProducer,
                                                    encoder: Encoder[V]) {
                                  import collection.JavaConversions._
-                                 import kafka.javaapi.Implicits._
+                                 import kafka7.javaapi.Implicits._
                                  eventHandler.handle(seqAsJavaList(events), producer, encoder)
                                }
                                override def close { eventHandler.close }
                              },
-                             new kafka.producer.async.CallbackHandler[V] {
+                             new kafka7.producer.async.CallbackHandler[V] {
                                import collection.JavaConversions._
                                override def init(props: Properties) { cbkHandler.init(props)}
                                override def beforeEnqueue(data: QueueItem[V] = null.asInstanceOf[QueueItem[V]]): QueueItem[V] = {
@@ -98,9 +98,9 @@ class Producer[K,V](config: ProducerConfig,
    * synchronous or the asynchronous producer
    * @param producerData the producer data object that encapsulates the topic, key and message data
    */
-  def send(producerData: kafka.javaapi.producer.ProducerData[K,V]) {
+  def send(producerData: kafka7.javaapi.producer.ProducerData[K,V]) {
     import collection.JavaConversions._
-    underlying.send(new kafka.producer.ProducerData[K,V](producerData.getTopic, producerData.getKey,
+    underlying.send(new kafka7.producer.ProducerData[K,V](producerData.getTopic, producerData.getKey,
                                                          asScalaBuffer(producerData.getData)))
   }
 
@@ -108,9 +108,9 @@ class Producer[K,V](config: ProducerConfig,
    * Use this API to send data to multiple topics
    * @param producerData list of producer data objects that encapsulate the topic, key and message data
    */
-  def send(producerData: java.util.List[kafka.javaapi.producer.ProducerData[K,V]]) {
+  def send(producerData: java.util.List[kafka7.javaapi.producer.ProducerData[K,V]]) {
     import collection.JavaConversions._
-    underlying.send(asScalaBuffer(producerData).map(pd => new kafka.producer.ProducerData[K,V](pd.getTopic, pd.getKey,
+    underlying.send(asScalaBuffer(producerData).map(pd => new kafka7.producer.ProducerData[K,V](pd.getTopic, pd.getKey,
                                                          asScalaBuffer(pd.getData))): _*)
   }
 

@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package kafka.network;
+package kafka7.network;
 
 import java.net._
 import java.io._
 import org.junit._
 import org.scalatest.junit.JUnitSuite
-import kafka.utils.TestUtils
+import kafka7.utils.TestUtils
 import java.util.Random
 import org.apache.log4j._
 

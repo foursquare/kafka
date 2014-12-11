@@ -15,12 +15,12 @@
  * limitations under the License.
 */
 
-package kafka.producer
+package kafka7.producer
 
 import async.AsyncProducerConfigShared
 import java.util.Properties
-import kafka.utils.{ZKConfig, Utils}
-import kafka.common.InvalidConfigException
+import kafka7.utils.{ZKConfig, Utils}
+import kafka7.common.InvalidConfigException
 
 class ProducerConfig(val props: Properties) extends ZKConfig(props)
         with AsyncProducerConfigShared with SyncProducerConfigShared{
@@ -51,7 +51,7 @@ class ProducerConfig(val props: Properties) extends ZKConfig(props)
     throw new InvalidConfigException("At least one of zk.connect or broker.list must be specified")
 
   /** the partitioner class for partitioning events amongst sub-topics */
-  val partitionerClass = Utils.getString(props, "partitioner.class", "kafka.producer.DefaultPartitioner")
+  val partitionerClass = Utils.getString(props, "partitioner.class", "kafka7.producer.DefaultPartitioner")
 
   /** this parameter specifies whether the messages are sent asynchronously *
    * or not. Valid values are - async for asynchronous send                 *

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.network
+package kafka7.network
 
 import java.util.concurrent._
 import java.util.concurrent.atomic._
@@ -23,10 +23,10 @@ import java.net._
 import java.io._
 import java.nio.channels._
 
-import kafka.utils._
+import kafka7.utils._
 
 import org.apache.log4j.Logger
-import kafka.api.RequestKeys
+import kafka7.api.RequestKeys
 
 /**
  * An NIO socket server. The thread model is
@@ -72,7 +72,7 @@ class SocketServer(val port: Int,
 /**
  * A base class with some helper variables and methods
  */
-private[kafka] abstract class AbstractServerThread extends Runnable {
+private[kafka7] abstract class AbstractServerThread extends Runnable {
 
   protected val selector = Selector.open();
   protected val logger = Logger.getLogger(getClass())
@@ -117,7 +117,7 @@ private[kafka] abstract class AbstractServerThread extends Runnable {
 /**
  * Thread that accepts and configures new connections. There is only need for one of these
  */
-private[kafka] class Acceptor(val port: Int, private val processors: Array[Processor], val sendBufferSize: Int, val receiveBufferSize: Int) extends AbstractServerThread {
+private[kafka7] class Acceptor(val port: Int, private val processors: Array[Processor], val sendBufferSize: Int, val receiveBufferSize: Int) extends AbstractServerThread {
 
   /**
    * Accept loop that checks for new connection attempts
@@ -186,7 +186,7 @@ private[kafka] class Acceptor(val port: Int, private val processors: Array[Proce
  * Thread that processes all requests from a single connection. There are N of these running in parallel
  * each of which has its own selectors
  */
-private[kafka] class Processor(val handlerMapping: Handler.HandlerMapping,
+private[kafka7] class Processor(val handlerMapping: Handler.HandlerMapping,
                                val time: Time,
                                val stats: SocketServerStats,
                                val maxRequestSize: Int) extends AbstractServerThread {

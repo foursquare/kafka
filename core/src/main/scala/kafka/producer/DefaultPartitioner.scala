@@ -15,9 +15,9 @@
  * limitations under the License.
 */
 
-package kafka.producer
+package kafka7.producer
 
-private[kafka] class DefaultPartitioner[T] extends Partitioner[T] {
+private[kafka7] class DefaultPartitioner[T] extends Partitioner[T] {
   private val random = new java.util.Random
   
   def partition(key: T, numPartitions: Int): Int = {

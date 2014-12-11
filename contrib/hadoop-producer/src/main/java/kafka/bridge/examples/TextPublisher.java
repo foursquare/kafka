@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.bridge.examples;
+package kafka7.bridge.examples;
 
 
 import java.io.IOException;
-import kafka.bridge.hadoop.KafkaOutputFormat;
+import kafka7.bridge.hadoop.KafkaOutputFormat;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.io.NullWritable;

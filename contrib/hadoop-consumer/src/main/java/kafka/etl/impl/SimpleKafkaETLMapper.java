@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.etl.impl;
+package kafka7.etl.impl;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
-import kafka.etl.KafkaETLKey;
-import kafka.etl.KafkaETLUtils;
-import kafka.message.Message;
+import kafka7.etl.KafkaETLKey;
+import kafka7.etl.KafkaETLUtils;
+import kafka7.message.Message;
 import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;

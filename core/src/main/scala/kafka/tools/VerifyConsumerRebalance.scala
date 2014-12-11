@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package kafka.tools
+package kafka7.tools
 
 import joptsimple.OptionParser
 import org.I0Itec.zkclient.ZkClient
-import kafka.utils.{Logging, ZKGroupTopicDirs, ZkUtils, ZKStringSerializer}
+import kafka7.utils.{Logging, ZKGroupTopicDirs, ZkUtils, ZKStringSerializer}
 
 object VerifyConsumerRebalance extends Logging {
   def main(args: Array[String]) {

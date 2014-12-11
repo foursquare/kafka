@@ -15,18 +15,18 @@
  * limitations under the License.
  */
 
-package kafka.integration
+package kafka7.integration
 
 import junit.framework.Assert._
-import kafka.zk.ZooKeeperTestHarness
+import kafka7.zk.ZooKeeperTestHarness
 import java.nio.channels.ClosedByInterruptException
 import java.util.concurrent.atomic.AtomicInteger
-import kafka.utils.{ZKGroupTopicDirs, Logging}
-import kafka.consumer.{ConsumerTimeoutException, ConsumerConfig, ConsumerConnector, Consumer}
-import kafka.server.{KafkaRequestHandlers, KafkaServer, KafkaConfig}
+import kafka7.utils.{ZKGroupTopicDirs, Logging}
+import kafka7.consumer.{ConsumerTimeoutException, ConsumerConfig, ConsumerConnector, Consumer}
+import kafka7.server.{KafkaRequestHandlers, KafkaServer, KafkaConfig}
 import org.apache.log4j.{Level, Logger}
 import org.scalatest.junit.JUnit3Suite
-import kafka.utils.{TestUtils, TestZKUtils}
+import kafka7.utils.{TestUtils, TestZKUtils}
 
 class AutoOffsetResetTest extends JUnit3Suite with ZooKeeperTestHarness with Logging {
 

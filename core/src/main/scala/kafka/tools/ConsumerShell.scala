@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package kafka.tools
+package kafka7.tools
 
 import joptsimple._
-import kafka.utils.{Utils, Logging}
+import kafka7.utils.{Utils, Logging}
 import java.util.concurrent.CountDownLatch
-import kafka.consumer._
-import kafka.serializer.StringDecoder
+import kafka7.consumer._
+import kafka7.serializer.StringDecoder
 
 /**
  * Program to read using the rich consumer and dump the results to standard out

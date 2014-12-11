@@ -14,26 +14,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.examples;
+package kafka7.examples;
 
 
 import java.util.Properties;
-import kafka.javaapi.producer.ProducerData;
-import kafka.producer.ProducerConfig;
+import kafka7.javaapi.producer.ProducerData;
+import kafka7.producer.ProducerConfig;
 
 public class Producer extends Thread
 {
-  private final kafka.javaapi.producer.Producer<Integer, String> producer;
+  private final kafka7.javaapi.producer.Producer<Integer, String> producer;
   private final String topic;
   private final Properties props = new Properties();
 
   public Producer(String topic)
   {
-    props.put("serializer.class", "kafka.serializer.StringEncoder");
+    props.put("serializer.class", "kafka7.serializer.StringEncoder");
     props.put("zk.connect", "localhost:2181");
     // Use random partitioner. Don't need the key type. Just set it to Integer.
     // The message is of type String.
-    producer = new kafka.javaapi.producer.Producer<Integer, String>(new ProducerConfig(props));
+    producer = new kafka7.javaapi.producer.Producer<Integer, String>(new ProducerConfig(props));
     this.topic = topic;
   }
   

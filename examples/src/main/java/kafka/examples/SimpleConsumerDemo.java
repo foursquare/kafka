@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.examples;
+package kafka7.examples;
 
 
 import java.util.ArrayList;
 import java.util.List;
-import kafka.api.FetchRequest;
-import kafka.javaapi.MultiFetchResponse;
-import kafka.javaapi.consumer.SimpleConsumer;
-import kafka.javaapi.message.ByteBufferMessageSet;
-import kafka.message.MessageAndOffset;
+import kafka7.api.FetchRequest;
+import kafka7.javaapi.MultiFetchResponse;
+import kafka7.javaapi.consumer.SimpleConsumer;
+import kafka7.javaapi.message.ByteBufferMessageSet;
+import kafka7.message.MessageAndOffset;
 
 
 public class SimpleConsumerDemo

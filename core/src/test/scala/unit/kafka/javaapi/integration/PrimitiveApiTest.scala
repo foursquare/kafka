@@ -15,23 +15,23 @@
  * limitations under the License.
  */
 
-package kafka.javaapi.integration
+package kafka7.javaapi.integration
 
 import scala.collection._
-import kafka.api.FetchRequest
-import kafka.common.{InvalidPartitionException, OffsetOutOfRangeException}
-import kafka.server.{KafkaRequestHandlers, KafkaConfig}
+import kafka7.api.FetchRequest
+import kafka7.common.{InvalidPartitionException, OffsetOutOfRangeException}
+import kafka7.server.{KafkaRequestHandlers, KafkaConfig}
 import org.apache.log4j.{Level, Logger}
 import org.scalatest.junit.JUnit3Suite
-import kafka.javaapi.message.ByteBufferMessageSet
-import kafka.javaapi.ProducerRequest
-import kafka.utils.TestUtils
-import kafka.message.{DefaultCompressionCodec, NoCompressionCodec, Message}
+import kafka7.javaapi.message.ByteBufferMessageSet
+import kafka7.javaapi.ProducerRequest
+import kafka7.utils.TestUtils
+import kafka7.message.{DefaultCompressionCodec, NoCompressionCodec, Message}
 
 /**
  * End to end tests of the primitive apis against a local server
  */
-class PrimitiveApiTest extends JUnit3Suite with ProducerConsumerTestHarness with kafka.integration.KafkaServerTestHarness {
+class PrimitiveApiTest extends JUnit3Suite with ProducerConsumerTestHarness with kafka7.integration.KafkaServerTestHarness {
   
   val port = 9999
   val props = TestUtils.createBrokerConfig(0, port)

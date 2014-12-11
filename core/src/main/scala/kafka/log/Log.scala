@@ -15,17 +15,17 @@
  * limitations under the License.
  */
 
-package kafka.log
+package kafka7.log
 
 import java.util.concurrent.atomic._
 import java.text.NumberFormat
 import java.io._
-import kafka.message._
-import kafka.utils._
-import kafka.common._
-import kafka.api.OffsetRequest
+import kafka7.message._
+import kafka7.utils._
+import kafka7.common._
+import kafka7.api.OffsetRequest
 import java.util._
-import kafka.server.BrokerTopicStat
+import kafka7.server.BrokerTopicStat
 
 private[log] object Log {
   val FileSuffix = ".kafka"

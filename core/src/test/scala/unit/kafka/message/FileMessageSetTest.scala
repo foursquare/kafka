@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package kafka.message
+package kafka7.message
 
 import java.nio._
 import junit.framework.Assert._
-import kafka.utils.TestUtils._
+import kafka7.utils.TestUtils._
 import org.junit.Test
 
 class FileMessageSetTest extends BaseMessageSetTestCases {

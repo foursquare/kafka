@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.examples;
+package kafka7.examples;
 
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-import kafka.consumer.ConsumerConfig;
-import kafka.consumer.ConsumerIterator;
-import kafka.consumer.KafkaStream;
-import kafka.javaapi.consumer.ConsumerConnector;
-import kafka.message.Message;
+import kafka7.consumer.ConsumerConfig;
+import kafka7.consumer.ConsumerIterator;
+import kafka7.consumer.KafkaStream;
+import kafka7.javaapi.consumer.ConsumerConnector;
+import kafka7.message.Message;
 
 
 public class Consumer extends Thread
@@ -35,7 +35,7 @@ public class Consumer extends Thread
   
   public Consumer(String topic)
   {
-    consumer = kafka.consumer.Consumer.createJavaConsumerConnector(
+    consumer = kafka7.consumer.Consumer.createJavaConsumerConnector(
             createConsumerConfig());
     this.topic = topic;
   }

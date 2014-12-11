@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
 
-import kafka.utils.Logging
+import kafka7.utils.Logging
 import java.util.regex.{PatternSyntaxException, Pattern}
 
 

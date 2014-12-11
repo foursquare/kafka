@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.common
+package kafka7.common
 
 /**
  * Thrown when a request is made for broker but no brokers with that topic

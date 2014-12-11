@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.producer
+package kafka7.producer
 
 import async.{CallbackHandler, EventHandler}
-import kafka.serializer.Encoder
-import kafka.utils._
+import kafka7.serializer.Encoder
+import kafka7.utils._
 import java.util.Properties
-import kafka.cluster.{Partition, Broker}
+import kafka7.cluster.{Partition, Broker}
 import java.util.concurrent.atomic.AtomicBoolean
-import kafka.common.{NoBrokersForPartitionException, InvalidPartitionException}
-import kafka.api.ProducerRequest
+import kafka7.common.{NoBrokersForPartitionException, InvalidPartitionException}
+import kafka7.api.ProducerRequest
 
 class Producer[K,V](config: ProducerConfig,
                     partitioner: Partitioner[K],
@@ -69,15 +69,15 @@ extends Logging {
    * callback handler. If you use this constructor, encoder, eventHandler, callback handler and partitioner
    * will not be picked up from the config.
    * @param config Producer Configuration object
-   * @param encoder Encoder used to convert an object of type V to a kafka.message.Message. If this is null it
+   * @param encoder Encoder used to convert an object of type V to a kafka7.message.Message. If this is null it
    * throws an InvalidConfigException
-   * @param eventHandler the class that implements kafka.producer.async.IEventHandler[T] used to
-   * dispatch a batch of produce requests, using an instance of kafka.producer.SyncProducer. If this is null, it
+   * @param eventHandler the class that implements kafka7.producer.async.IEventHandler[T] used to
+   * dispatch a batch of produce requests, using an instance of kafka7.producer.SyncProducer. If this is null, it
    * uses the DefaultEventHandler
-   * @param cbkHandler the class that implements kafka.producer.async.CallbackHandler[T] used to inject
-   * callbacks at various stages of the kafka.producer.AsyncProducer pipeline. If this is null, the producer does
+   * @param cbkHandler the class that implements kafka7.producer.async.CallbackHandler[T] used to inject
+   * callbacks at various stages of the kafka7.producer.AsyncProducer pipeline. If this is null, the producer does
    * not use the callback handler and hence does not invoke any callbacks
-   * @param partitioner class that implements the kafka.producer.Partitioner[K], used to supply a custom
+   * @param partitioner class that implements the kafka7.producer.Partitioner[K], used to supply a custom
    * partitioning strategy on the message key (of type K) that is specified through the ProducerData[K, T]
    * object in the  send API. If this is null, producer uses DefaultPartitioner
    */

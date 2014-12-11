@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.etl.impl;
+package kafka7.etl.impl;
 
 
 import java.net.URI;
@@ -23,13 +23,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 import java.util.Random;
-import kafka.etl.KafkaETLKey;
-import kafka.etl.KafkaETLRequest;
-import kafka.etl.Props;
-import kafka.javaapi.message.ByteBufferMessageSet;
-import kafka.javaapi.producer.SyncProducer;
-import kafka.message.Message;
-import kafka.producer.SyncProducerConfig;
+import kafka7.etl.KafkaETLKey;
+import kafka7.etl.KafkaETLRequest;
+import kafka7.etl.Props;
+import kafka7.javaapi.message.ByteBufferMessageSet;
+import kafka7.javaapi.producer.SyncProducer;
+import kafka7.message.Message;
+import kafka7.producer.SyncProducerConfig;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.BytesWritable;
@@ -91,7 +91,7 @@ public class DataGenerator {
 		}
 		// send events
 		System.out.println(" send " + list.size() + " " + _topic + " count events to " + _uri);
-		_producer.send(_topic, new ByteBufferMessageSet(kafka.message.NoCompressionCodec$.MODULE$, list));
+		_producer.send(_topic, new ByteBufferMessageSet(kafka7.message.NoCompressionCodec$.MODULE$, list));
 
 		// close the producer
 		_producer.close();

@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
 import scala.collection._
-import kafka.utils.{Utils, Logging}
-import kafka.serializer.{DefaultDecoder, Decoder}
+import kafka7.utils.{Utils, Logging}
+import kafka7.serializer.{DefaultDecoder, Decoder}
 
 /**
  *  Main interface for consumer
@@ -84,8 +84,8 @@ object Consumer extends Logging {
    *  @param config  at the minimum, need to specify the groupid of the consumer and the zookeeper
    *                 connection string zk.connect.
    */
-  def createJavaConsumerConnector(config: ConsumerConfig): kafka.javaapi.consumer.ConsumerConnector = {
-    val consumerConnect = new kafka.javaapi.consumer.ZookeeperConsumerConnector(config)
+  def createJavaConsumerConnector(config: ConsumerConfig): kafka7.javaapi.consumer.ConsumerConnector = {
+    val consumerConnect = new kafka7.javaapi.consumer.ZookeeperConsumerConnector(config)
     Utils.registerMBean(consumerConnect.underlying, consumerStatsMBeanName)
     consumerConnect
   }

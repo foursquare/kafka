@@ -15,17 +15,17 @@
  * limitations under the License.
 */
 
-package kafka.producer
+package kafka7.producer
 
 import async._
 import java.util.Properties
-import kafka.serializer.Encoder
+import kafka7.serializer.Encoder
 import java.util.concurrent.{ConcurrentMap, ConcurrentHashMap}
-import kafka.cluster.{Partition, Broker}
-import kafka.api.ProducerRequest
-import kafka.common.{UnavailableProducerException, InvalidConfigException}
-import kafka.utils.{Utils, Logging}
-import kafka.message.{NoCompressionCodec, ByteBufferMessageSet}
+import kafka7.cluster.{Partition, Broker}
+import kafka7.api.ProducerRequest
+import kafka7.common.{UnavailableProducerException, InvalidConfigException}
+import kafka7.utils.{Utils, Logging}
+import kafka7.message.{NoCompressionCodec, ByteBufferMessageSet}
 
 class ProducerPool[V](private val config: ProducerConfig,
                       private val serializer: Encoder[V],

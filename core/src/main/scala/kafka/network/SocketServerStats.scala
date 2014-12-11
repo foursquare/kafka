@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package kafka.network
+package kafka7.network
 
-import kafka.utils._
-import kafka.api.RequestKeys
+import kafka7.utils._
+import kafka7.api.RequestKeys
 
 trait SocketServerStatsMBean {
   def getProduceRequestsPerSecond: Double

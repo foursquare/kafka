@@ -15,19 +15,19 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
 import java.util.concurrent._
 import java.util.concurrent.atomic._
 import scala.collection._
 import junit.framework.Assert._
 
-import kafka.cluster._
-import kafka.message._
-import kafka.server._
+import kafka7.cluster._
+import kafka7.message._
+import kafka7.server._
 import org.scalatest.junit.JUnit3Suite
-import kafka.integration.KafkaServerTestHarness
-import kafka.utils.TestUtils
+import kafka7.integration.KafkaServerTestHarness
+import kafka7.utils.TestUtils
 
 class FetcherTest extends JUnit3Suite with KafkaServerTestHarness {
 

@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package kafka.common
+package kafka7.common
 
-import kafka.message.InvalidMessageException
+import kafka7.message.InvalidMessageException
 import java.nio.ByteBuffer
 import java.lang.Throwable
 

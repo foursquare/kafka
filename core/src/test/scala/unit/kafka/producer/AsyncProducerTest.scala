@@ -15,19 +15,19 @@
  * limitations under the License.
 */
 
-package kafka.producer
+package kafka7.producer
 
 import junit.framework.Assert
 import java.util.Properties
 import org.easymock.EasyMock
-import kafka.api.ProducerRequest
+import kafka7.api.ProducerRequest
 import org.apache.log4j.{Logger, Level}
 import org.junit.Test
 import org.scalatest.junit.JUnitSuite
-import kafka.producer.async._
-import kafka.serializer.Encoder
-import kafka.message.{NoCompressionCodec, ByteBufferMessageSet, Message}
-import kafka.utils.TestZKUtils
+import kafka7.producer.async._
+import kafka7.serializer.Encoder
+import kafka7.message.{NoCompressionCodec, ByteBufferMessageSet, Message}
+import kafka7.utils.TestZKUtils
 
 class AsyncProducerTest extends JUnitSuite {
 
@@ -54,7 +54,7 @@ class AsyncProducerTest extends JUnitSuite {
     props.put("host", "localhost")
     props.put("port", "9092")
     props.put("queue.size", "10")
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
     val config = new AsyncProducerConfig(props)
 
@@ -93,7 +93,7 @@ class AsyncProducerTest extends JUnitSuite {
     props.put("host", "localhost")
     props.put("port", "9092")
     props.put("queue.size", "10")
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
     val config = new AsyncProducerConfig(props)
 
@@ -131,7 +131,7 @@ class AsyncProducerTest extends JUnitSuite {
     props.put("host", "localhost")
     props.put("port", "9092")
     props.put("queue.size", "10")
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("batch.size", "5")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
 
@@ -170,7 +170,7 @@ class AsyncProducerTest extends JUnitSuite {
     props.put("host", "localhost")
     props.put("port", "9092")
     props.put("queue.size", "10")
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("queue.time", "200")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
 
@@ -203,7 +203,7 @@ class AsyncProducerTest extends JUnitSuite {
     asyncProducerProps.put("host", "localhost")
     asyncProducerProps.put("port", "9092")
     asyncProducerProps.put("queue.size", "10")
-    asyncProducerProps.put("serializer.class", "kafka.producer.StringSerializer")
+    asyncProducerProps.put("serializer.class", "kafka7.producer.StringSerializer")
     asyncProducerProps.put("queue.time", "100")
     asyncProducerProps.put("zk.connect", TestZKUtils.zookeeperConnect)
 
@@ -230,7 +230,7 @@ class AsyncProducerTest extends JUnitSuite {
     props.put("host", "localhost")
     props.put("port", "9092")
     props.put("queue.size", "50")
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("batch.size", "10")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
 
@@ -271,7 +271,7 @@ class AsyncProducerTest extends JUnitSuite {
     props.put("host", "localhost")
     props.put("port", "9092")
     props.put("queue.size", "50")
-    props.put("serializer.class", "kafka.producer.StringSerializer")
+    props.put("serializer.class", "kafka7.producer.StringSerializer")
     props.put("batch.size", "20")
     props.put("zk.connect", TestZKUtils.zookeeperConnect)
 

@@ -15,24 +15,24 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
 import java.util.concurrent._
 import java.util.concurrent.atomic._
 import locks.ReentrantLock
 import scala.collection._
-import kafka.cluster._
-import kafka.utils._
+import kafka7.cluster._
+import kafka7.utils._
 import org.I0Itec.zkclient.exception.ZkNodeExistsException
 import java.net.InetAddress
 import org.I0Itec.zkclient.{IZkStateListener, IZkChildListener, ZkClient}
 import org.apache.zookeeper.Watcher.Event.KeeperState
-import kafka.api.OffsetRequest
+import kafka7.api.OffsetRequest
 import java.util.UUID
-import kafka.serializer.Decoder
-import kafka.common.{ConsumerRebalanceFailedException, InvalidConfigException}
+import kafka7.serializer.Decoder
+import kafka7.common.{ConsumerRebalanceFailedException, InvalidConfigException}
 import java.lang.IllegalStateException
-import kafka.utils.ZkUtils._
+import kafka7.utils.ZkUtils._
 
 
 /**
@@ -70,7 +70,7 @@ import kafka.utils.ZkUtils._
  * Each consumer tracks the offset of the latest message consumed for each partition.
  *
  */
-private[kafka] object ZookeeperConsumerConnector {
+private[kafka7] object ZookeeperConsumerConnector {
   val shutdownCommand: FetchedDataChunk = new FetchedDataChunk(null, null, -1L)
 }
 
@@ -85,7 +85,7 @@ trait ZookeeperConsumerConnectorMBean {
   def getLatestOffset(topic: String, brokerId: Int, partitionId: Int): Long
 }
 
-private[kafka] class ZookeeperConsumerConnector(val config: ConsumerConfig,
+private[kafka7] class ZookeeperConsumerConnector(val config: ConsumerConfig,
                                                 val enableFetcher: Boolean) // for testing only
         extends ConsumerConnector with ZookeeperConsumerConnectorMBean
         with Logging {

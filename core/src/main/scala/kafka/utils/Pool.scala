@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.utils
+package kafka7.utils
 
 import java.util.ArrayList
 import java.util.concurrent._

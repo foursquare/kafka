@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.bridge.hadoop;
+package kafka7.bridge.hadoop;
 
 
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-import kafka.javaapi.producer.Producer;
-import kafka.javaapi.producer.ProducerData;
-import kafka.message.Message;
+import kafka7.javaapi.producer.Producer;
+import kafka7.javaapi.producer.ProducerData;
+import kafka7.message.Message;
 import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.mapreduce.RecordWriter;

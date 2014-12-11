@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
 import java.net._
 import java.nio.channels._
-import kafka.api._
-import kafka.message._
-import kafka.network._
-import kafka.utils._
+import kafka7.api._
+import kafka7.message._
+import kafka7.network._
+import kafka7.utils._
 
 /**
  * A consumer of kafka messages

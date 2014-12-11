@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package kafka.tools
+package kafka7.tools
 
-import kafka.message.Message
+import kafka7.message.Message
 import joptsimple.OptionParser
-import kafka.utils.{Utils, Logging}
-import kafka.producer.{ProducerData, ProducerConfig, Producer}
+import kafka7.utils.{Utils, Logging}
+import kafka7.producer.{ProducerData, ProducerConfig, Producer}
 import scala.collection.JavaConversions._
 import java.util.concurrent.CountDownLatch
-import kafka.consumer._
+import kafka7.consumer._
 
 
 object MirrorMaker extends Logging {

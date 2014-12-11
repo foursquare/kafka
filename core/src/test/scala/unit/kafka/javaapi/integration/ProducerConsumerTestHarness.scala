@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package kafka.javaapi.integration
+package kafka7.javaapi.integration
 
 import org.scalatest.junit.JUnit3Suite
 import java.util.Properties
-import kafka.producer.SyncProducerConfig
-import kafka.javaapi.producer.SyncProducer
-import kafka.javaapi.consumer.SimpleConsumer
+import kafka7.producer.SyncProducerConfig
+import kafka7.javaapi.producer.SyncProducer
+import kafka7.javaapi.consumer.SimpleConsumer
 
 trait ProducerConsumerTestHarness extends JUnit3Suite {
   

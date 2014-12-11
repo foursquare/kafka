@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package kafka.message
+package kafka7.message
 
 import java.nio._
-import kafka.utils._
-import kafka.common.UnknownMagicByteException
+import kafka7.utils._
+import kafka7.common.UnknownMagicByteException
 
 /**
  * Message byte offsets
@@ -101,7 +101,7 @@ object Message {
  */
 class Message(val buffer: ByteBuffer) {
   
-  import kafka.message.Message._
+  import kafka7.message.Message._
     
   
   private def this(checksum: Long, bytes: Array[Byte], compressionCodec: CompressionCodec) = {

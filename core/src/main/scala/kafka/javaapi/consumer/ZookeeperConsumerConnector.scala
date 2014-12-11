@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.javaapi.consumer
+package kafka7.javaapi.consumer
 
-import kafka.message.Message
-import kafka.serializer.{DefaultDecoder, Decoder}
-import kafka.consumer._
+import kafka7.message.Message
+import kafka7.serializer.{DefaultDecoder, Decoder}
+import kafka7.consumer._
 import scala.collection.JavaConversions.seqAsJavaList
 
 
@@ -58,11 +58,11 @@ import scala.collection.JavaConversions.seqAsJavaList
  *
 */
 
-private[kafka] class ZookeeperConsumerConnector(val config: ConsumerConfig,
+private[kafka7] class ZookeeperConsumerConnector(val config: ConsumerConfig,
                                  val enableFetcher: Boolean) // for testing only
     extends ConsumerConnector {
 
-  val underlying = new kafka.consumer.ZookeeperConsumerConnector(config, enableFetcher)
+  val underlying = new kafka7.consumer.ZookeeperConsumerConnector(config, enableFetcher)
 
   def this(config: ConsumerConfig) = this(config, true)
 

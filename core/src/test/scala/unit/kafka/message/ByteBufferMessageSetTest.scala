@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package kafka.message
+package kafka7.message
 
 import java.nio._
 import junit.framework.Assert._
 import org.junit.Test
-import kafka.utils.TestUtils
-import kafka.common.InvalidMessageSizeException
+import kafka7.utils.TestUtils
+import kafka7.common.InvalidMessageSizeException
 
 class ByteBufferMessageSetTest extends BaseMessageSetTestCases {
 

@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package kafka.server
+package kafka7.server
 
-import kafka.utils._
-import kafka.cluster.Broker
+import kafka7.utils._
+import kafka7.cluster.Broker
 import org.I0Itec.zkclient.{IZkStateListener, ZkClient}
 import org.I0Itec.zkclient.exception.ZkNodeExistsException
 import org.apache.zookeeper.Watcher.Event.KeeperState
-import kafka.log.LogManager
+import kafka7.log.LogManager
 import java.net.InetAddress
 
 /**

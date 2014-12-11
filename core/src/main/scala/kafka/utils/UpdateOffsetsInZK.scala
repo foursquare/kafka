@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package kafka.utils
+package kafka7.utils
 
 import org.I0Itec.zkclient.ZkClient
-import kafka.consumer.{SimpleConsumer, ConsumerConfig}
-import kafka.cluster.Partition
-import kafka.api.OffsetRequest
+import kafka7.consumer.{SimpleConsumer, ConsumerConfig}
+import kafka7.cluster.Partition
+import kafka7.api.OffsetRequest
 import java.lang.IllegalStateException
 
 /**

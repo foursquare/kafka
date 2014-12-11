@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package kafka.tools
+package kafka7.tools
 
 import java.io._
-import kafka.message._
-import kafka.utils._
+import kafka7.message._
+import kafka7.utils._
 
 object DumpLogSegments {
 

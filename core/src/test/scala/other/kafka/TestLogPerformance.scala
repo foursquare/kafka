@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package kafka.log
+package kafka7.log
 
-import kafka.message._
-import kafka.utils.{TestUtils, Utils}
+import kafka7.message._
+import kafka7.utils.{TestUtils, Utils}
 
 object TestLogPerformance {
 

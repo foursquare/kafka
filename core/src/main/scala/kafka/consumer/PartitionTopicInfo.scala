@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
 import java.util.concurrent._
 import java.util.concurrent.atomic._
-import kafka.message._
-import kafka.cluster._
-import kafka.utils.Logging
-import kafka.common.ErrorMapping
+import kafka7.message._
+import kafka7.cluster._
+import kafka7.utils.Logging
+import kafka7.common.ErrorMapping
 
 private[consumer] class PartitionTopicInfo(val topic: String,
                                            val brokerId: Int,

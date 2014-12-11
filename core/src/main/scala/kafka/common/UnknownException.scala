@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.common
+package kafka7.common
 
 /**
  * If we don't know what else it is, call it this

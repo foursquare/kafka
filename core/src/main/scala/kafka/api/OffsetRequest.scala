@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package kafka.api
+package kafka7.api
 
 import java.nio.ByteBuffer
-import kafka.utils.{nonthreadsafe, Utils}
-import kafka.network.{Send, Request}
+import kafka7.utils.{nonthreadsafe, Utils}
+import kafka7.network.{Send, Request}
 import java.nio.channels.GatheringByteChannel
-import kafka.common.ErrorMapping
+import kafka7.common.ErrorMapping
 
 object OffsetRequest {
   val SmallestTimeString = "smallest"
@@ -75,7 +75,7 @@ class OffsetRequest(val topic: String,
 }
 
 @nonthreadsafe
-private[kafka] class OffsetArraySend(offsets: Array[Long]) extends Send {
+private[kafka7] class OffsetArraySend(offsets: Array[Long]) extends Send {
   private var size: Long = offsets.foldLeft(4)((sum, _) => sum + 8)
   private val header = ByteBuffer.allocate(6)
   header.putInt(size.asInstanceOf[Int] + 2)

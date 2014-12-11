@@ -15,22 +15,22 @@
  * limitations under the License.
  */
 
-package kafka.log
+package kafka7.log
 
-import kafka.server.KafkaConfig
+import kafka7.server.KafkaConfig
 import java.io.File
 import java.nio.ByteBuffer
-import kafka.utils.Utils
-import kafka.api.FetchRequest
-import kafka.common.InvalidMessageSizeException
-import kafka.zk.ZooKeeperTestHarness
-import kafka.utils.{TestZKUtils, TestUtils}
-import kafka.consumer.{ZookeeperConsumerConnector, ConsumerConfig}
+import kafka7.utils.Utils
+import kafka7.api.FetchRequest
+import kafka7.common.InvalidMessageSizeException
+import kafka7.zk.ZooKeeperTestHarness
+import kafka7.utils.{TestZKUtils, TestUtils}
+import kafka7.consumer.{ZookeeperConsumerConnector, ConsumerConfig}
 import org.scalatest.junit.JUnit3Suite
-import kafka.integration.ProducerConsumerTestHarness
-import kafka.integration.KafkaServerTestHarness
+import kafka7.integration.ProducerConsumerTestHarness
+import kafka7.integration.KafkaServerTestHarness
 import org.apache.log4j.{Logger, Level}
-import kafka.message.{NoCompressionCodec, Message, ByteBufferMessageSet}
+import kafka7.message.{NoCompressionCodec, Message, ByteBufferMessageSet}
 
 class LogCorruptionTest extends JUnit3Suite with ProducerConsumerTestHarness with KafkaServerTestHarness with ZooKeeperTestHarness {
   val zkConnect = TestZKUtils.zookeeperConnect  
@@ -45,8 +45,8 @@ class LogCorruptionTest extends JUnit3Suite with ProducerConsumerTestHarness wit
   val partition = 0
 
   def testMessageSizeTooLarge() {
-    val requestHandlerLogger = Logger.getLogger(classOf[kafka.server.KafkaRequestHandlers])
-    val fetcherLogger = Logger.getLogger(classOf[kafka.consumer.FetcherRunnable])
+    val requestHandlerLogger = Logger.getLogger(classOf[kafka7.server.KafkaRequestHandlers])
+    val fetcherLogger = Logger.getLogger(classOf[kafka7.consumer.FetcherRunnable])
 
     requestHandlerLogger.setLevel(Level.FATAL)
     fetcherLogger.setLevel(Level.FATAL)

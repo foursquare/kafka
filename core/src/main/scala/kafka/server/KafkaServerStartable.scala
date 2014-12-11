@@ -15,9 +15,9 @@
  * limitations under the License.
  */
 
-package kafka.server
+package kafka7.server
 
-import kafka.utils.Logging
+import kafka7.utils.Logging
 
 
 class KafkaServerStartable(val serverConfig: KafkaConfig) extends Logging {

@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package kafka.message
+package kafka7.message
 
-import kafka.utils.Logging
+import kafka7.utils.Logging
 import java.nio.ByteBuffer
 import java.nio.channels._
-import kafka.utils.IteratorTemplate
-import kafka.common.{MessageSizeTooLargeException, InvalidMessageSizeException, ErrorMapping}
+import kafka7.utils.IteratorTemplate
+import kafka7.common.{MessageSizeTooLargeException, InvalidMessageSizeException, ErrorMapping}
 
 /**
  * A sequence of messages stored in a byte buffer

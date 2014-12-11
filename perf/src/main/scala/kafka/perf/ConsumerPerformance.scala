@@ -15,16 +15,16 @@
  * limitations under the License.
  */
 
-package kafka.perf
+package kafka7.perf
 
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.atomic.AtomicLong
 import java.nio.channels.ClosedByInterruptException
 import org.apache.log4j.Logger
-import kafka.message.Message
-import kafka.utils.Utils
+import kafka7.message.Message
+import kafka7.utils.Utils
 import java.util.{Random, Properties}
-import kafka.consumer._
+import kafka7.consumer._
 import java.text.SimpleDateFormat
 
 /**

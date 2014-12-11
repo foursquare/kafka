@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package kafka.tools
+package kafka7.tools
 
 
 import joptsimple._
 import org.I0Itec.zkclient.ZkClient
-import kafka.utils.{ZkUtils, ZKStringSerializer, Logging}
-import kafka.consumer.SimpleConsumer
+import kafka7.utils.{ZkUtils, ZKStringSerializer, Logging}
+import kafka7.consumer.SimpleConsumer
 import collection.mutable.Map
 object ConsumerOffsetChecker extends Logging {
 

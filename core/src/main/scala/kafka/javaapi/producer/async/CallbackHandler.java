@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-package kafka.javaapi.producer.async;
+package kafka7.javaapi.producer.async;
 
 
 import java.util.Properties;
-import kafka.producer.async.QueueItem;
+import kafka7.producer.async.QueueItem;
 
 /**
  * Callback handler APIs for use in the async producer. The purpose is to

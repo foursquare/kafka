@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package kafka.bridge.pig;
+package kafka7.bridge.pig;
 
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import kafka.bridge.hadoop.KafkaOutputFormat;
-import kafka.bridge.hadoop.KafkaRecordWriter;
+import kafka7.bridge.hadoop.KafkaOutputFormat;
+import kafka7.bridge.hadoop.KafkaRecordWriter;
 import org.apache.avro.io.BinaryEncoder;
 import org.apache.avro.io.Encoder;
 import org.apache.hadoop.fs.Path;

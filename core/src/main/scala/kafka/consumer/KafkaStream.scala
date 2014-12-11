@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
 
 import java.util.concurrent.BlockingQueue
-import kafka.serializer.Decoder
-import kafka.message.MessageAndMetadata
+import kafka7.serializer.Decoder
+import kafka7.message.MessageAndMetadata
 
 class KafkaStream[T](private val queue: BlockingQueue[FetchedDataChunk],
                      consumerTimeoutMs: Int,

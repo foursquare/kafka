@@ -14,37 +14,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
 */
-package kafka.javaapi
+package kafka7.javaapi
 
-import kafka.serializer.Encoder
-import kafka.producer.async.QueueItem
-import kafka.utils.Logging
+import kafka7.serializer.Encoder
+import kafka7.producer.async.QueueItem
+import kafka7.utils.Logging
 
 private[javaapi] object Implicits extends Logging {
-  implicit def javaMessageSetToScalaMessageSet(messageSet: kafka.javaapi.message.ByteBufferMessageSet):
-     kafka.message.ByteBufferMessageSet = messageSet.underlying
+  implicit def javaMessageSetToScalaMessageSet(messageSet: kafka7.javaapi.message.ByteBufferMessageSet):
+     kafka7.message.ByteBufferMessageSet = messageSet.underlying
 
-  implicit def scalaMessageSetToJavaMessageSet(messageSet: kafka.message.ByteBufferMessageSet):
-     kafka.javaapi.message.ByteBufferMessageSet = {
-    new kafka.javaapi.message.ByteBufferMessageSet(messageSet.getBuffer, messageSet.getInitialOffset,
+  implicit def scalaMessageSetToJavaMessageSet(messageSet: kafka7.message.ByteBufferMessageSet):
+     kafka7.javaapi.message.ByteBufferMessageSet = {
+    new kafka7.javaapi.message.ByteBufferMessageSet(messageSet.getBuffer, messageSet.getInitialOffset,
                                                    messageSet.getErrorCode)
   }
 
-  implicit def toJavaSyncProducer(producer: kafka.producer.SyncProducer): kafka.javaapi.producer.SyncProducer = {
+  implicit def toJavaSyncProducer(producer: kafka7.producer.SyncProducer): kafka7.javaapi.producer.SyncProducer = {
     debug("Implicit instantiation of Java Sync Producer")
-    new kafka.javaapi.producer.SyncProducer(producer)
+    new kafka7.javaapi.producer.SyncProducer(producer)
   }
 
-  implicit def toSyncProducer(producer: kafka.javaapi.producer.SyncProducer): kafka.producer.SyncProducer = {
+  implicit def toSyncProducer(producer: kafka7.javaapi.producer.SyncProducer): kafka7.producer.SyncProducer = {
     debug("Implicit instantiation of Sync Producer")
     producer.underlying
   }
 
-  implicit def toScalaEventHandler[T](eventHandler: kafka.javaapi.producer.async.EventHandler[T])
-       : kafka.producer.async.EventHandler[T] = {
-    new kafka.producer.async.EventHandler[T] {
+  implicit def toScalaEventHandler[T](eventHandler: kafka7.javaapi.producer.async.EventHandler[T])
+       : kafka7.producer.async.EventHandler[T] = {
+    new kafka7.producer.async.EventHandler[T] {
       override def init(props: java.util.Properties) { eventHandler.init(props) }
-      override def handle(events: Seq[QueueItem[T]], producer: kafka.producer.SyncProducer, encoder: Encoder[T]) {
+      override def handle(events: Seq[QueueItem[T]], producer: kafka7.producer.SyncProducer, encoder: Encoder[T]) {
         import collection.JavaConversions._
         eventHandler.handle(seqAsJavaList(events), producer, encoder)
       }
@@ -52,11 +52,11 @@ private[javaapi] object Implicits extends Logging {
     }
   }
 
-  implicit def toJavaEventHandler[T](eventHandler: kafka.producer.async.EventHandler[T])
-    : kafka.javaapi.producer.async.EventHandler[T] = {
-    new kafka.javaapi.producer.async.EventHandler[T] {
+  implicit def toJavaEventHandler[T](eventHandler: kafka7.producer.async.EventHandler[T])
+    : kafka7.javaapi.producer.async.EventHandler[T] = {
+    new kafka7.javaapi.producer.async.EventHandler[T] {
       override def init(props: java.util.Properties) { eventHandler.init(props) }
-      override def handle(events: java.util.List[QueueItem[T]], producer: kafka.javaapi.producer.SyncProducer,
+      override def handle(events: java.util.List[QueueItem[T]], producer: kafka7.javaapi.producer.SyncProducer,
                           encoder: Encoder[T]) {
         import collection.JavaConversions._
         eventHandler.handle(asScalaBuffer(events), producer, encoder)
@@ -65,9 +65,9 @@ private[javaapi] object Implicits extends Logging {
     }
   }
 
-  implicit def toScalaCbkHandler[T](cbkHandler: kafka.javaapi.producer.async.CallbackHandler[T])
-      : kafka.producer.async.CallbackHandler[T] = {
-    new kafka.producer.async.CallbackHandler[T] {
+  implicit def toScalaCbkHandler[T](cbkHandler: kafka7.javaapi.producer.async.CallbackHandler[T])
+      : kafka7.producer.async.CallbackHandler[T] = {
+    new kafka7.producer.async.CallbackHandler[T] {
       import collection.JavaConversions._
       override def init(props: java.util.Properties) { cbkHandler.init(props)}
       override def beforeEnqueue(data: QueueItem[T] = null.asInstanceOf[QueueItem[T]]): QueueItem[T] = {
@@ -89,9 +89,9 @@ private[javaapi] object Implicits extends Logging {
     }
   }
 
-  implicit def toJavaCbkHandler[T](cbkHandler: kafka.producer.async.CallbackHandler[T])
-      : kafka.javaapi.producer.async.CallbackHandler[T] = {
-    new kafka.javaapi.producer.async.CallbackHandler[T] {
+  implicit def toJavaCbkHandler[T](cbkHandler: kafka7.producer.async.CallbackHandler[T])
+      : kafka7.javaapi.producer.async.CallbackHandler[T] = {
+    new kafka7.javaapi.producer.async.CallbackHandler[T] {
       import collection.JavaConversions._
       override def init(props: java.util.Properties) { cbkHandler.init(props)}
       override def beforeEnqueue(data: QueueItem[T] = null.asInstanceOf[QueueItem[T]]): QueueItem[T] = {
@@ -115,9 +115,9 @@ private[javaapi] object Implicits extends Logging {
     }
   }
 
-  implicit def toMultiFetchResponse(response: kafka.javaapi.MultiFetchResponse): kafka.api.MultiFetchResponse =
+  implicit def toMultiFetchResponse(response: kafka7.javaapi.MultiFetchResponse): kafka7.api.MultiFetchResponse =
     response.underlying
 
-  implicit def toJavaMultiFetchResponse(response: kafka.api.MultiFetchResponse): kafka.javaapi.MultiFetchResponse =
-    new kafka.javaapi.MultiFetchResponse(response.buffer, response.numSets, response.offsets)
+  implicit def toJavaMultiFetchResponse(response: kafka7.api.MultiFetchResponse): kafka7.javaapi.MultiFetchResponse =
+    new kafka7.javaapi.MultiFetchResponse(response.buffer, response.numSets, response.offsets)
 }

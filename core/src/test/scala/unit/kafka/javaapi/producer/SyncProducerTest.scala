@@ -15,25 +15,25 @@
  * limitations under the License.
  */
 
-package kafka.javaapi.producer
+package kafka7.javaapi.producer
 
 import junit.framework.Assert
-import kafka.utils.SystemTime
-import kafka.utils.TestUtils
-import kafka.server.{KafkaServer, KafkaConfig}
+import kafka7.utils.SystemTime
+import kafka7.utils.TestUtils
+import kafka7.server.{KafkaServer, KafkaConfig}
 import org.apache.log4j.Logger
 import org.scalatest.junit.JUnitSuite
 import org.junit.{After, Before, Test}
 import java.util.Properties
-import kafka.producer.SyncProducerConfig
-import kafka.javaapi.message.ByteBufferMessageSet
-import kafka.javaapi.ProducerRequest
-import kafka.message.{NoCompressionCodec, Message}
+import kafka7.producer.SyncProducerConfig
+import kafka7.javaapi.message.ByteBufferMessageSet
+import kafka7.javaapi.ProducerRequest
+import kafka7.message.{NoCompressionCodec, Message}
 
 class SyncProducerTest extends JUnitSuite {
   private var messageBytes =  new Array[Byte](2);
   private var server: KafkaServer = null
-  val simpleProducerLogger = Logger.getLogger(classOf[kafka.producer.SyncProducer])
+  val simpleProducerLogger = Logger.getLogger(classOf[kafka7.producer.SyncProducer])
 
   @Before
   def setUp() {

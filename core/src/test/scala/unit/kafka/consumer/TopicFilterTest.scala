@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.consumer
+package kafka7.consumer
 
 
 import junit.framework.Assert._

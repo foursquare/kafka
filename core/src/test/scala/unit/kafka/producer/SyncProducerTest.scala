@@ -15,19 +15,19 @@
  * limitations under the License.
  */
 
-package kafka.producer
+package kafka7.producer
 
 import junit.framework.Assert
-import kafka.utils.SystemTime
-import kafka.utils.TestUtils
-import kafka.server.{KafkaServer, KafkaConfig}
+import kafka7.utils.SystemTime
+import kafka7.utils.TestUtils
+import kafka7.server.{KafkaServer, KafkaConfig}
 import org.apache.log4j.Logger
 import org.scalatest.junit.JUnitSuite
 import org.junit.{After, Before, Test}
-import kafka.common.MessageSizeTooLargeException
+import kafka7.common.MessageSizeTooLargeException
 import java.util.Properties
-import kafka.api.ProducerRequest
-import kafka.message.{NoCompressionCodec, DefaultCompressionCodec, Message, ByteBufferMessageSet}
+import kafka7.api.ProducerRequest
+import kafka7.message.{NoCompressionCodec, DefaultCompressionCodec, Message, ByteBufferMessageSet}
 
 class SyncProducerTest extends JUnitSuite {
   private var messageBytes =  new Array[Byte](2);

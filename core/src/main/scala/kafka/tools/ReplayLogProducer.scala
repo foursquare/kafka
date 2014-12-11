@@ -15,19 +15,19 @@
  * limitations under the License.
  */
 
-package kafka.tools
+package kafka7.tools
 
 import joptsimple.OptionParser
 import java.util.concurrent.{Executors, CountDownLatch}
 import java.util.Properties
-import kafka.producer.async.DefaultEventHandler
-import kafka.serializer.DefaultEncoder
-import kafka.producer.{ProducerData, DefaultPartitioner, ProducerConfig, Producer}
-import kafka.consumer._
-import kafka.utils.{ZKStringSerializer, Logging}
-import kafka.api.OffsetRequest
+import kafka7.producer.async.DefaultEventHandler
+import kafka7.serializer.DefaultEncoder
+import kafka7.producer.{ProducerData, DefaultPartitioner, ProducerConfig, Producer}
+import kafka7.consumer._
+import kafka7.utils.{ZKStringSerializer, Logging}
+import kafka7.api.OffsetRequest
 import org.I0Itec.zkclient._
-import kafka.message.{CompressionCodec, Message}
+import kafka7.message.{CompressionCodec, Message}
 
 object ReplayLogProducer extends Logging {
 

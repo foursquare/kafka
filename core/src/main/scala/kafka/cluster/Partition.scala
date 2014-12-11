@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package kafka.cluster
+package kafka7.cluster
 
 object Partition {
   def parse(s: String): Partition = {

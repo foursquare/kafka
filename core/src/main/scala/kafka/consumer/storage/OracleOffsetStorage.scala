@@ -15,11 +15,11 @@
  * limitations under the License.
  */
 
-package kafka.consumer.storage.sql
+package kafka7.consumer.storage.sql
 
 import java.sql._
-import kafka.utils._
-import kafka.consumer.storage.OffsetStorage
+import kafka7.utils._
+import kafka7.consumer.storage.OffsetStorage
 
 /**
  * An offset storage implementation that uses an oracle database to save offsets

@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-package kafka.server
+package kafka7.server
 
-import kafka.network._
-import kafka.utils._
+import kafka7.network._
+import kafka7.utils._
 
 /**
  * A set of message sets prefixed by size

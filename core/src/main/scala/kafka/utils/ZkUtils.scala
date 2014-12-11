@@ -15,15 +15,15 @@
  * limitations under the License.
  */
 
-package kafka.utils
+package kafka7.utils
 
 import org.I0Itec.zkclient.ZkClient
 import org.I0Itec.zkclient.serialize.ZkSerializer
-import kafka.cluster.{Broker, Cluster}
+import kafka7.cluster.{Broker, Cluster}
 import scala.collection._
 import java.util.Properties
 import org.I0Itec.zkclient.exception.{ZkNodeExistsException, ZkNoNodeException, ZkMarshallingError}
-import kafka.consumer.TopicCount
+import kafka7.consumer.TopicCount
 
 object ZkUtils extends Logging {
   val ConsumersPath = "/consumers"

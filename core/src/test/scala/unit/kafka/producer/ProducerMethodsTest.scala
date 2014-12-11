@@ -21,9 +21,9 @@ package unit.kafka.producer
 import collection.immutable.SortedSet
 import java.util._
 import junit.framework.Assert._
-import kafka.cluster.Partition
-import kafka.common.NoBrokersForPartitionException
-import kafka.producer._
+import kafka7.cluster.Partition
+import kafka7.common.NoBrokersForPartitionException
+import kafka7.producer._
 import org.easymock.EasyMock
 import org.junit.Test
 import org.scalatest.junit.JUnitSuite
@@ -38,7 +38,7 @@ class ProducerMethodsTest extends JUnitSuite {
     val config = new ProducerConfig(props)
     val mockPartitioner = EasyMock.createMock(classOf[Partitioner[String]])
     val mockProducerPool = EasyMock.createMock(classOf[ProducerPool[String]])
-    val mockBrokerPartitionInfo = EasyMock.createMock(classOf[kafka.producer.BrokerPartitionInfo])
+    val mockBrokerPartitionInfo = EasyMock.createMock(classOf[kafka7.producer.BrokerPartitionInfo])
 
     EasyMock.expect(mockBrokerPartitionInfo.getBrokerPartitionInfo("the_topic")).andReturn(SortedSet[Partition]())
     EasyMock.replay(mockBrokerPartitionInfo)
