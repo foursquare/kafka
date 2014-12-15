@@ -25,7 +25,7 @@ import scala.xml.transform.{RewriteRule, RuleTransformer}
 object KafkaBuild extends Build {
 
   val commonSettings = Seq(
-    version := "0.7.1-fs-a",
+    version := "0.7.1-fs-rp-a",
     organization := "kafka",
     scalacOptions ++= Seq("-deprecation", "-unchecked"),
     scalaVersion := "2.9.2",
